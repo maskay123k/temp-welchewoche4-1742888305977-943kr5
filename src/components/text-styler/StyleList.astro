@@ -1,0 +1,17 @@
+---
+import type { StyleDefinition } from '../../utils/textTransformers/types';
+import StylePreviewItem from './StylePreviewItem.astro';
+
+interface Props {
+  styles: StyleDefinition[];
+  language: string;
+}
+
+const { styles, language } = Astro.props;
+---
+
+<div class="grid gap-4">
+  {styles.map(style => (
+    <StylePreviewItem style={style} language={language} />
+  ))}
+</div>
