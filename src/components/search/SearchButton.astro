@@ -1,0 +1,35 @@
+---
+import { translations } from '../../i18n/translations';
+import type { LanguageCode } from '../../i18n/constants';
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+const t = translations[language as LanguageCode] || translations.en;
+---
+
+<button
+  id="search-button"
+  class="inline-flex items-center px-3 py-2 rounded-md text-sm hover:bg-[var--color-bg-offset)] transition-colors"
+  aria-label={t.search?.label || 'Search'}
+>
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+  <span class="ml-2 hidden sm:inline">
+    {t.search?.shortcut || 'Press ⌘K'}
+  </span>
+</button>
+
+<script>
+  const button = document.getElementById('search-button');
+  const dialog = document.getElementById('search-dialog');
+  
+  button?.addEventListener('click', () => {
+    dialog?.classList.remove('hidden');
+    dialog?.classList.add('block');
+    (document.getElementById('search-input') as HTMLInputElement)?.focus();
+  });
+</script>
