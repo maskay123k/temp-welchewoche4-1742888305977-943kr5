@@ -1,0 +1,24 @@
+---
+import type { StyleCategory } from '../../utils/textTransformers/types';
+import StyleList from './StyleList.astro';
+import { translations } from '../../i18n/translations';
+import type { LanguageCode } from '../../i18n/constants';
+
+interface Props {
+  category: StyleCategory;
+  language: string;
+}
+
+const { category, language } = Astro.props;
+const t = translations[language as LanguageCode] || translations.en;
+---
+
+<section 
+  id={category.name.toLowerCase().replace(/\s+/g, '-')} 
+  class="scroll-mt-24"
+>
+  <h2 class="text-2xl font-semibold mb-6">
+    {t.textStyler.categories[category.name] || category.name}
+  </h2>
+  <StyleList styles={category.styles} language={language} />
+</section>
