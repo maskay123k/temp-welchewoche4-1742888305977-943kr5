@@ -1,0 +1,127 @@
+---
+    import { translations } from '../i18n/translations';
+    import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+    import NavBar from '../components/navigation/NavBar.astro';
+    import { generateMeta, type MetaProps } from '../utils/seo/meta';
+    import { 
+      generateWebsiteSchema,
+      generateOrganizationSchema,
+      generateWebPageSchema,
+      generateBreadcrumbSchema
+    } from '../utils/schema';
+    import '../styles/themes.css';
+
+    interface Props extends MetaProps {
+      toastMessage?: 'emoji' | 'text';
+      breadcrumbs?: Array<{ name: string; path: string; }>;
+    }
+
+    const { 
+      title = 'copylennyface.com',
+      description,
+      image,
+      noIndex,
+      language,
+      toastMessage = 'emoji',
+      breadcrumbs = []
+    } = Astro.props;
+
+    const t = translations[language] || translations.de;
+    const meta = generateMeta({ title, description, image, noIndex, language });
+
+    // Generate structured data
+    const websiteSchema = generateWebsiteSchema();
+    const organizationSchema = generateOrganizationSchema();
+    const webPageSchema = generateWebPageSchema({
+      title,
+      description: description || '',
+      path: Astro.url.pathname,
+      language
+    });
+    const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+    const structuredData = [
+      websiteSchema,
+      organizationSchema,
+      webPageSchema,
+      ...(breadcrumbs.length ? [breadcrumbSchema] : [])
+    ];
+    ---
+
+    <!doctype html>
+    <html lang={language}>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="copylennyface.com" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        
+        {meta.map(({ name, property, content }) => (
+          property ? 
+            <meta property={property} content={content} /> :
+            <meta name={name} content={content} />
+        ))}
+        
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        
+        {/* Structured Data */}
+        {structuredData.map(schema => (
+          <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+        ))}
+        
+        <GoogleAnalytics />
+      </head>
+      <body class="bg-[var(--color-bg-base)] text-[var(--color-text-base)]">
+        <NavBar language={language} />
+        <main class="container mx-auto px-4 py-8">
+          <slot />
+        </main>
+        <div id="toast" class="fixed bottom-4 right-4 z-50 bg-[var(--color-success)] text-white px-4 py-2 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+          {toastMessage === 'emoji' ? t?.copied : t?.textCopied}
+        </div>
+      </body>
+    </html>
+
+    <script>
+      import { themeStore } from '../utils/themeStore';
+      import { setupDropdowns } from '../utils/dropdown';
+      
+      // Initialize theme system
+      themeStore.initialize();
+      
+      // Initialize dropdowns
+      setupDropdowns();
+      
+      // Check for Permissions-Policy header
+      fetch(window.location.href)
+        .then(response => {
+          if (response.headers.has('Permissions-Policy')) {
+            const policy = response.headers.get('Permissions-Policy');
+            console.log('Permissions-Policy header found:', policy);
+            if (policy?.includes('clipboard=()')) {
+              console.error('Clipboard API is blocked by Permissions-Policy header.');
+            }
+          } else {
+            console.log('No Permissions-Policy header found.');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching headers:', error);
+        });
+    </script>
+
+    <style is:global>
+      html {
+        font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+    </style>
