@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { navigationTranslations } from '../../i18n/translations/navigation';
+import { imprintTranslations } from '../../i18n/translations/pages/imprint';
+import { i18nConfig } from '../../i18n/config';
+import type { LanguageCode } from '../../i18n/constants';
+
+const { lang } = Astro.params;
+const nav = navigationTranslations[lang as LanguageCode];
+const t = imprintTranslations[lang as LanguageCode] || imprintTranslations.en;
+
+export function getStaticPaths() {
+  return i18nConfig.locales.map(lang => ({
+    params: { lang }
+  }));
+}
+---
+
+<Layout title={`${t.title}`} language={lang}>
+  <div class="max-w-4xl mx-auto px-4 py-8" data-pagefind-body data-pagefind-filter="language:${lang}">
+    <h1 class="text-3xl font-bold mb-8" data-pagefind-meta="title">{t.title}</h1>
+
+    <div class="prose prose-lg max-w-none space-y-8">
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:company">{t.company.title}</h2>
+        <p data-pagefind-meta="company:name">{t.company.name}</p>
+        <p data-pagefind-meta="company:street">{t.company.street}</p>
+        <p data-pagefind-meta="company:city">{t.company.city}</p>
+        <p data-pagefind-meta="company:country">{t.company.country}</p>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:contact">{t.contact.title}</h2>
+        <p>
+          <strong>{t.contact.email.label}:</strong>{' '}
+          <a href={`mailto:${t.contact.email.value}`} class="text-[var(--color-accent)]" data-pagefind-meta="contact:email">
+            {t.contact.email.value}
+          </a>
+        </p>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:responsible">{t.responsible.title}</h2>
+        <p class="font-semibold" data-pagefind-meta="responsible:name">{t.responsible.name}</p>
+        <p data-pagefind-meta="responsible:role">{t.responsible.role}</p>
+        <p class="whitespace-pre-line" data-pagefind-meta="responsible:description">{t.responsible.description}</p>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:disclaimer">{t.disclaimer.title}</h2>
+        <p data-pagefind-meta="disclaimer">{t.disclaimer.content}</p>
+      </section>
+    </div>
+  </div>
+</Layout>
