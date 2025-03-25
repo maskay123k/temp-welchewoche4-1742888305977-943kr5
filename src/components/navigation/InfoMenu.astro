@@ -1,0 +1,43 @@
+---
+import { navigationTranslations } from '../../i18n/translations/navigation';
+import type { LanguageCode } from '../../i18n/constants';
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+const t = navigationTranslations[language as LanguageCode];
+---
+
+<div class="relative" data-dropdown>
+  <button
+    class="dropdown-button inline-flex items-center px-3 py-2 rounded-md text-sm hover:bg-[var(--color-bg-offset)] transition-colors"
+    aria-label={t.info}
+    aria-expanded="false"
+  >
+    <span class="flex items-center">
+      <span>{t.info}</span>
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </button>
+
+  <div class="dropdown-content hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-[var(--color-bg-base)] border border-[var(--color-border)]">
+    <div class="py-1">
+      <a href={`/${language}/about`} class="block px-4 py-2 text-sm text-[var(--color-text-offset)] hover:bg-[var(--color-bg-offset)] hover:text-[var(--color-text-base)]">
+        {t.about}
+      </a>
+      <a href={`/${language}/contact`} class="block px-4 py-2 text-sm text-[var(--color-text-offset)] hover:bg-[var(--color-bg-offset)] hover:text-[var(--color-text-base)]">
+        {t.contact}
+      </a>
+      <a href={`/${language}/imprint`} class="block px-4 py-2 text-sm text-[var(--color-text-offset)] hover:bg-[var(--color-bg-offset)] hover:text-[var(--color-text-base)]">
+        {t.imprint}
+      </a>
+      <a href={`/${language}/privacy`} class="block px-4 py-2 text-sm text-[var(--color-text-offset)] hover:bg-[var(--color-bg-offset)] hover:text-[var(--color-text-base)]">
+        {t.privacy}
+      </a>
+    </div>
+  </div>
+</div>
