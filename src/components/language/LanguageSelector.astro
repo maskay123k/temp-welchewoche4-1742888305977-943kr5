@@ -1,0 +1,56 @@
+---
+import { languages } from '../../i18n/ui';
+import { i18nConfig } from '../../i18n/config';
+
+// Get current URL path
+const { pathname } = Astro.url;
+
+// Get current language from URL
+const currentLang = pathname.split('/')[1] || i18nConfig.defaultLocale;
+
+// Create URLs for each language
+function createLanguageURL(lang: string) {
+  const [, ...parts] = pathname.split('/');
+  parts[0] = lang;
+  return `/${parts.join('/')}`;
+}
+---
+
+<div class="relative" data-dropdown>
+  <button
+    type="button"
+    class="dropdown-button inline-flex items-center px-3 py-2 rounded-md text-sm hover:bg-[var(--color-bg-offset)] transition-colors"
+    aria-label="Select language"
+    aria-expanded="false"
+  >
+    <span class="flex items-center">
+      <span>{languages[currentLang].label}</span>
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </button>
+
+  <div class="dropdown-content hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-[var(--color-bg-base)] border border-[var(--color-border)]">
+    <div class="py-1">
+      {i18nConfig.locales.map((lang) => (
+        <a
+          href={createLanguageURL(lang)}
+          class={`block px-4 py-2 text-sm hover:bg-[var(--color-bg-offset)] ${
+            lang === currentLang
+              ? 'text-[var(--color-accent)]'
+              : 'text-[var(--color-text-offset)] hover:text-[var(--color-text-base)]'
+          }`}
+          aria-current={lang === currentLang ? 'page' : undefined}
+        >
+          {languages[lang].label}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  import { setupDropdowns } from '../../utils/dropdown';
+  setupDropdowns();
+</script>
