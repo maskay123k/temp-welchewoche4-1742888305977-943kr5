@@ -1,0 +1,58 @@
+---
+import { languages } from '../../../i18n/languages';
+import DropdownButton from './DropdownButton.astro';
+
+interface Props {
+  currentLanguage: string;
+}
+
+const { currentLanguage } = Astro.props;
+const currentLang = languages.find(lang => lang.code === currentLanguage);
+---
+
+<div class="relative" data-dropdown>
+  <DropdownButton label="Select language">
+    <span class="flex items-center">
+      <span class="mr-1">{currentLang?.flag}</span>
+      <span class="hidden sm:inline">{currentLang?.name}</span>
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </DropdownButton>
+
+  <div class="dropdown-content hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-[var(--color-bg-base)] border border-[var(--color-border)]">
+    <div class="py-1">
+      {languages.map((lang) => (
+        <button
+          class={`language-option w-full text-left px-4 py-2 text-sm hover:bg-[var(--color-bg-offset)] ${
+            lang.code === currentLanguage
+              ? 'text-[var(--color-accent)]'
+              : 'text-[var(--color-text-offset)] hover:text-[var(--color-text-base)]'
+          }`}
+          data-lang={lang.code}
+        >
+          <span class="mr-2">{lang.flag}</span>
+          {lang.name}
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  import { languageStore } from '../../../i18n/languageStore';
+  
+  // Initialize language system
+  languageStore.initialize();
+  
+  // Setup language switcher
+  document.querySelectorAll('.language-option').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const lang = (e.currentTarget as HTMLButtonElement).dataset.lang;
+      if (lang) {
+        languageStore.setLanguage(lang as any);
+      }
+    });
+  });
+</script>
