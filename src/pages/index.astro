@@ -1,0 +1,9 @@
+---
+    import { i18nConfig } from '../i18n/config';
+
+    // Get language from request or use default
+    const language = i18nConfig.defaultLocale;
+
+    // Redirect to language-specific calendar week page
+    return Astro.redirect(`/${language}/kalenderwoche`);
+    ---
