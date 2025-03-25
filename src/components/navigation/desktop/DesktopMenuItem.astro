@@ -1,0 +1,55 @@
+---
+import type { MenuItem } from '../types';
+import { translations } from '../../../i18n/translations';
+import type { LanguageCode } from '../../../i18n/constants';
+
+interface Props {
+  item: MenuItem;
+  language: string;
+}
+
+const { item, language } = Astro.props;
+const t = translations[language as LanguageCode];
+
+function getTranslation(key: string): string {
+  return key.split('.').reduce((obj, key) => obj?.[key as keyof typeof obj], t) || key;
+}
+---
+
+{
+  item.children ? (
+    <div class="relative" data-dropdown>
+      <button
+        class="dropdown-button inline-flex items-center px-3 py-2 rounded-md text-sm hover:bg-[var(--color-bg-offset)] transition-colors"
+        aria-expanded="false"
+      >
+        <span class="flex items-center">
+          <span>{getTranslation(item.label)}</span>
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+
+      <div class="dropdown-content hidden absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[var(--color-bg-base)] border border-[var(--color-border)]">
+        <div class="py-1">
+          {item.children.map((child) => (
+            <a
+              href={child.href}
+              class="block px-4 py-2 text-sm text-[var(--color-text-offset)] hover:bg-[var(--color-bg-offset)] hover:text-[var(--color-text-base)]"
+            >
+              {getTranslation(child.label)}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  ) : (
+    <a
+      href={item.href}
+      class="text-[var(--color-text-offset)] hover:text-[var(--color-text-base)] transition-colors"
+    >
+      {getTranslation(item.label)}
+    </a>
+  )
+}
