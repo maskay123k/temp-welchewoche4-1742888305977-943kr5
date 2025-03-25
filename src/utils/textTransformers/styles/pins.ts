@@ -1,0 +1,17 @@
+import type { StyleDefinition } from '../types';
+
+const pinsMap: Record<string, string> = {
+  A: 'A྇', B: 'B྇', C: 'C྇', D: 'D྇', E: 'E྇', F: 'F྇', G: 'G྇', H: 'H྇',
+  I: 'I྇', J: 'J྇', K: 'K྇', L: 'L྇', M: 'M྇', N: 'N྇', O: 'O྇', P: 'P྇',
+  Q: 'Q྇', R: 'R྇', S: 'S྇', T: 'T྇', U: 'U྇', V: 'V྇', W: 'W྇', X: 'X྇',
+  Y: 'Y྇', Z: 'Z྇', a: 'a྇', b: 'b྇', c: 'c྇', d: 'd྇', e: 'e྇', f: 'f྇',
+  g: 'g྇', h: 'h྇', i: 'i྇', j: 'j྇', k: 'k྇', l: 'l྇', m: 'm྇', n: 'n྇',
+  o: 'o྇', p: 'p྇', q: 'q྇', r: 'r྇', s: 's྇', t: 't྇', u: 'u྇', v: 'v྇',
+  w: 'w྇', x: 'x྇', y: 'y྇', z: 'z྇', 'Ä': 'A྇̈྇', 'Ö': 'O྇̈྇', 'Ü': 'U྇̈྇',
+  'ä': 'a྇̈྇', 'ö': 'o྇̈྇', 'ü': 'u྇̈྇', 'ß': 'ß྇'
+};
+
+export const pinsStyle: StyleDefinition = {
+  name: 'Pins',
+  transform: (text: string) => text.split('').map(char => pinsMap[char] || char).join('')
+};
