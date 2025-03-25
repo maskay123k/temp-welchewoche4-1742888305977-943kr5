@@ -1,0 +1,24 @@
+---
+import { textStyles } from '../../utils/textTransformers';
+import { translations } from '../../i18n/translations';
+import type { LanguageCode } from '../../i18n/constants';
+
+interface Props {
+  language: string;
+  isMobile?: boolean;
+}
+
+const { language, isMobile = false } = Astro.props;
+const t = translations[language as LanguageCode] || translations.en;
+---
+
+<div class={`${isMobile ? 'space-y-2' : 'flex items-center space-x-6'}`}>
+  {textStyles.map((category) => (
+    <a
+      href={`#${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+      class="text-[var(--color-text-offset)] hover:text-[var(--color-text-base)] transition-colors block md:inline-block"
+    >
+      {t.textStyler.categories[category.name] || category.name}
+    </a>
+  ))}
+</div>
