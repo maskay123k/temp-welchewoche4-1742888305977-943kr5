@@ -1,0 +1,128 @@
+---
+    import { translations } from '../i18n/translations';
+    import type { LanguageCode } from '../i18n/constants';
+
+    interface Props {
+      language: string;
+    }
+
+    const { language } = Astro.props;
+    const t = translations[language as LanguageCode] || translations.en;
+
+    function getWeekNumber(date: Date): number {
+      const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+      const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
+      return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+    }
+
+    function getMonday(date: Date): Date {
+      const day = date.getDay();
+      const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+      return new Date(date.setDate(diff));
+    }
+
+    function getSunday(date: Date): Date {
+      const day = date.getDay();
+      const diff = date.getDate() - day + (day === 0 ? 0 : 7);
+      return new Date(date.setDate(diff));
+    }
+
+    function formatDate(date: Date): string {
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const year = date.getFullYear();
+      return `${day}.${month}.${year}`;
+    }
+
+    const currentYear = new Date().getFullYear();
+    const currentWeek = getWeekNumber(new Date());
+
+    const years = Array.from({ length: 6 }, (_, i) => 2025 + i);
+    const months = Array.from({ length: 12 }, (_, i) => {
+      const date = new Date(2025, i, 1);
+      return {
+        number: i + 1,
+        name: new Intl.DateTimeFormat(language, { month: 'long' }).format(date)
+      };
+    });
+
+    const getWeeks = (year: number, month: number | null = null) => {
+      const firstDayOfYear = new Date(year, 0, 1);
+      const lastDayOfYear = new Date(year, 11, 31);
+      const weeks = [];
+      let currentDate = getMonday(firstDayOfYear);
+
+      while (currentDate <= lastDayOfYear) {
+        const weekNumber = getWeekNumber(currentDate);
+        const monday = getMonday(new Date(currentDate));
+        const sunday = getSunday(new Date(currentDate));
+
+        if (month === null || (monday.getMonth() + 1) === month || (sunday.getMonth() + 1) === month) {
+          weeks.push({
+            weekNumber,
+            startDate: formatDate(monday),
+            endDate: formatDate(sunday),
+          });
+        }
+        currentDate.setDate(currentDate.getDate() + 7);
+      }
+      return weeks;
+    };
+
+    const [selectedYear, selectedMonth] = [2025, null];
+    const weeks = getWeeks(selectedYear, selectedMonth);
+    ---
+
+    <div class="flex flex-col">
+      <div class="flex justify-center items-center space-x-4 mb-4">
+        <select id="year-filter" class="bg-[var(--color-bg-offset)] border border-[var(--color-border)] rounded-md px-3 py-2 text-sm">
+          {years.map(year => (
+            <option value={year} selected={year === selectedYear}>{year}</option>
+          ))}
+        </select>
+        <select id="month-filter" class="bg-[var(--color-bg-offset)] border border-[var(--color-border)] rounded-md px-3 py-2 text-sm">
+          <option value="">{t.calendarWeek?.allMonths || 'All Months'}</option>
+          {months.map(month => (
+            <option value={month.number} selected={month.number === selectedMonth}>{month.name}</option>
+          ))}
+        </select>
+      </div>
+      <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
+        {weeks.map((week) => (
+          <div
+            class:list={[
+              'p-3 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1',
+              week.weekNumber === currentWeek && selectedYear === currentYear
+                ? 'bg-[var(--color-accent)] text-white font-bold shadow-md'
+                : 'bg-[var(--color-bg-offset)] text-[var(--color-text-offset)] hover:bg-[var(--color-border)] transition-colors'
+            ]}
+            data-week={week.weekNumber}
+            tabindex="0"
+            aria-label={`Week ${week.weekNumber}, from ${week.startDate} to ${week.endDate}`}
+          >
+            <span class="block text-base font-bold">{week.weekNumber}</span>
+            <span class="block text-xs">{week.startDate.slice(0, 5)}–{week.endDate.slice(0, 5)}.{week.endDate.slice(8)}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <script>
+      const yearFilter = document.getElementById('year-filter');
+      const monthFilter = document.getElementById('month-filter');
+      
+      if (yearFilter && monthFilter) {
+        yearFilter.addEventListener('change', () => {
+          // TODO: Implement year filter
+        });
+        monthFilter.addEventListener('change', () => {
+          // TODO: Implement month filter
+        });
+      }
+    </script>
+
+    <style>
+      .grid div {
+        cursor: pointer;
+      }
+    </style>
