@@ -1,0 +1,30 @@
+---
+import type { Emoji } from '../data/emojis';
+import { translations } from '../i18n/translations';
+
+interface Props {
+  emoji: Emoji;
+  language: string;
+}
+
+const { emoji, language } = Astro.props;
+const t = translations[language];
+---
+
+<button
+  class="emoji-item p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-col items-center justify-center gap-2"
+  data-emoji={emoji.char}
+>
+  <span class="text-4xl">{emoji.char}</span>
+  <span class="text-sm text-gray-600 text-center">{t.emojiDescriptions[emoji.name] || emoji.name}</span>
+</button>
+
+<script>
+  import ClipboardJS from 'clipboard';
+
+  new ClipboardJS('.emoji-item', {
+    text: function(trigger) {
+      return trigger.getAttribute('data-emoji') || '';
+    }
+  });
+</script>
