@@ -1,0 +1,1192 @@
+import type { FAQ } from '../types';
+
+export const textStylerFAQs: Record<string, FAQ[]> = {
+  de: {
+    general: [
+      {
+        question: 'Wie funktioniert der Text-Styler?',
+        answer: 'Geben Sie Ihren Text ein und wählen Sie einen Stil aus. Der Text wird automatisch umgewandelt und kann mit einem Klick kopiert werden.'
+      },
+      {
+        question: 'Sind die Stile überall lesbar?',
+        answer: 'Die Lesbarkeit kann je nach Plattform und Schriftunterstützung variieren. Einige Stile sind möglicherweise nicht überall verfügbar.'
+      },
+      {
+        question: 'Was ist der Text-Styler und wie funktioniert er?',
+        answer: 'Der Text-Styler auf smileys.lol ist ein Tool, mit dem Sie normalen Text in verschiedene stilisierte Schriftarten umwandeln können. Geben Sie einfach Ihren Text ein, wählen Sie den gewünschten Stil aus, und der Text-Styler generiert den formatierten Text für Sie.'
+      },
+      {
+        question: 'Welche Textstile kann ich mit dem Text-Styler erstellen (z. B. fett, kursiv, dekorativ)?',
+        answer: 'Der Text-Styler bietet eine Vielzahl von Textstilen, darunter fett, kursiv, unterstrichen, durchgestrichen und dekorative Schriftarten, die sich für verschiedene Anlässe und Plattformen eignen.'
+      },
+      {
+        question: 'Wie kann ich den gestalteten Text in sozialen Medien oder Nachrichten verwenden?',
+        answer: 'Nachdem Sie Ihren Text mit dem Text-Styler formatiert haben, kopieren Sie den gestalteten Text und fügen ihn in Ihre sozialen Medien, Nachrichten oder Beiträge ein. Die meisten Plattformen unterstützen diese speziellen Schriftarten.'
+      },
+      {
+        question: 'Ist der Text-Styler mit allen Plattformen und Geräten kompatibel?',
+        answer: 'Die vom Text-Styler generierten Schriftarten werden von den meisten modernen Plattformen und Geräten unterstützt. Dennoch kann es in seltenen Fällen zu Darstellungsunterschieden kommen.'
+      },
+      {
+        question: 'Kann ich den Text-Styler kostenlos nutzen?',
+        answer: 'Ja, der Text-Styler auf smileys.lol ist ein kostenloses Tool, das Sie ohne Einschränkungen für Ihre Texte verwenden können.'
+      },
+      {
+        question: 'Gibt es eine Zeichenbeschränkung für den Text, den ich stylen möchte?',
+        answer: 'Der Text-Styler hat keine spezifische Zeichenbeschränkung. Beachten Sie jedoch, dass einige Plattformen oder Anwendungen eigene Begrenzungen für die Zeichenanzahl haben können.'
+      },
+      {
+        question: 'Wie kann ich sicherstellen, dass der gestaltete Text korrekt angezeigt wird?',
+        answer: 'Um sicherzustellen, dass der gestaltete Text korrekt angezeigt wird, testen Sie ihn auf der gewünschten Plattform oder dem Gerät. In den meisten Fällen werden die Schriftarten problemlos dargestellt.'
+      },
+      {
+        question: 'Kann ich den Text-Styler verwenden, um Text in verschiedenen Sprachen zu gestalten?',
+        answer: 'Ja, der Text-Styler unterstützt Texte in verschiedenen Sprachen. Geben Sie einfach den gewünschten Text in der jeweiligen Sprache ein, und der Text-Styler formatiert ihn entsprechend.'
+      }
+    ],
+    technical: [
+      {
+        question: 'Werden Sonderzeichen unterstützt?',
+        answer: 'Ja, die meisten Sonderzeichen werden unterstützt. Bei einigen komplexeren Stilen können jedoch Einschränkungen bestehen.'
+      },
+      {
+        question: 'Gibt es eine Längenbegrenzung?',
+        answer: 'Nein, es gibt keine strikte Längenbegrenzung. Bei sehr langen Texten kann die Verarbeitung jedoch etwas länger dauern.'
+      }
+    ]
+  },
+  en: {
+  general: [
+    {
+      question: 'How does the Text Styler work?',
+      answer: 'Enter your text and select a style. The text is automatically converted and can be copied with a single click.'
+    },
+    {
+      question: 'Are the styles readable everywhere?',
+      answer: 'Readability may vary depending on the platform and font support. Some styles may not be available everywhere.'
+    },
+    {
+      question: 'What is the Text Styler and how does it work?',
+      answer: 'The Text Styler on smileys.lol is a tool that allows you to convert normal text into various stylized fonts. Simply enter your text, choose the desired style, and the Text Styler generates the formatted text for you.'
+    },
+    {
+      question: 'What text styles can I create with the Text Styler (e.g., bold, italic, decorative)?',
+      answer: 'The Text Styler offers a variety of text styles, including bold, italic, underlined, strikethrough, and decorative fonts suitable for various occasions and platforms.'
+    },
+    {
+      question: 'How can I use the styled text in social media or messages?',
+      answer: 'After formatting your text with the Text Styler, copy the styled text and paste it into your social media, messages, or posts. Most platforms support these special fonts.'
+    },
+    {
+      question: 'Is the Text Styler compatible with all platforms and devices?',
+      answer: 'The fonts generated by the Text Styler are supported by most modern platforms and devices. However, there may be display differences in rare cases.'
+    },
+    {
+      question: 'Can I use the Text Styler for free?',
+      answer: 'Yes, the Text Styler on smileys.lol is a free tool that you can use for your texts without any restrictions.'
+    },
+    {
+      question: 'Is there a character limit for the text I want to style?',
+      answer: 'The Text Styler has no specific character limit. However, note that some platforms or applications may have their own limitations on the number of characters.'
+    },
+    {
+      question: 'How can I ensure that the styled text is displayed correctly?',
+      answer: 'To ensure that the styled text is displayed correctly, test it on the desired platform or device. In most cases, the fonts will be displayed without any issues.'
+    },
+    {
+      question: 'Can I use the Text Styler to style text in different languages?',
+      answer: 'Yes, the Text Styler supports texts in various languages. Simply enter the desired text in the respective language, and the Text Styler will format it accordingly.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Are special characters supported?',
+      answer: 'Yes, most special characters are supported. However, there may be limitations with some more complex styles.'
+    },
+    {
+      question: 'Is there a length limit?',
+      answer: 'No, there is no strict length limit. However, processing may take a bit longer for very long texts.'
+    }
+  ]
+},
+  fr: {
+  general: [
+    {
+      question: 'Comment fonctionne le Styliseur de Texte ?',
+      answer: 'Entrez votre texte et choisissez un style. Le texte sera automatiquement transformé et peut être copié d\'un simple clic.'
+    },
+    {
+      question: 'Les styles sont-ils lisibles partout ?',
+      answer: 'La lisibilité peut varier selon la plateforme et la prise en charge des polices. Certains styles peuvent ne pas être disponibles partout.'
+    },
+    {
+      question: 'Qu\'est-ce que le Styliseur de Texte et comment fonctionne-t-il ?',
+      answer: 'Le Styliseur de Texte sur smileys.lol est un outil qui vous permet de convertir du texte normal en différentes polices stylisées. Il vous suffit d\'entrer votre texte, de choisir le style souhaité, et le Styliseur de Texte génère le texte formaté pour vous.'
+    },
+    {
+      question: 'Quels styles de texte puis-je créer avec le Styliseur de Texte (par exemple, gras, italique, décoratif) ?',
+      answer: 'Le Styliseur de Texte offre une variété de styles de texte, notamment gras, italique, souligné, barré et des polices décoratives, adaptées à différentes occasions et plateformes.'
+    },
+    {
+      question: 'Comment puis-je utiliser le texte stylisé dans les médias sociaux ou les messages ?',
+      answer: 'Après avoir formaté votre texte avec le Styliseur de Texte, copiez le texte stylisé et collez-le dans vos médias sociaux, messages ou publications. La plupart des plateformes prennent en charge ces polices spéciales.'
+    },
+    {
+      question: 'Le Styliseur de Texte est-il compatible avec toutes les plateformes et tous les appareils ?',
+      answer: 'Les polices générées par le Styliseur de Texte sont prises en charge par la plupart des plateformes et appareils modernes. Cependant, dans de rares cas, il peut y avoir des différences d\'affichage.'
+    },
+    {
+      question: 'Puis-je utiliser le Styliseur de Texte gratuitement ?',
+      answer: 'Oui, le Styliseur de Texte sur smileys.lol est un outil gratuit que vous pouvez utiliser sans restriction pour vos textes.'
+    },
+    {
+      question: 'Y a-t-il une limite de caractères pour le texte que je souhaite styliser ?',
+      answer: 'Le Styliseur de Texte n\'a pas de limite de caractères spécifique. Cependant, notez que certaines plateformes ou applications peuvent avoir leurs propres limitations sur le nombre de caractères.'
+    },
+    {
+      question: 'Comment puis-je m\'assurer que le texte stylisé s\'affiche correctement ?',
+      answer: 'Pour vous assurer que le texte stylisé s\'affiche correctement, testez-le sur la plateforme ou l\'appareil souhaité. Dans la plupart des cas, les polices s\'afficheront sans problème.'
+    },
+    {
+      question: 'Puis-je utiliser le Styliseur de Texte pour styliser du texte dans différentes langues ?',
+      answer: 'Oui, le Styliseur de Texte prend en charge les textes dans différentes langues. Entrez simplement le texte souhaité dans la langue respective, et le Styliseur de Texte le formatera en conséquence.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Les caractères spéciaux sont-ils pris en charge ?',
+      answer: 'Oui, la plupart des caractères spéciaux sont pris en charge. Cependant, il peut y avoir des limitations avec certains styles plus complexes.'
+    },
+    {
+      question: 'Y a-t-il une limite de longueur ?',
+      answer: 'Non, il n\'y a pas de limite de longueur stricte. Cependant, pour les textes très longs, le traitement peut prendre un peu plus de temps.'
+    }
+  ]
+},
+  it: {
+  general: [
+    {
+      question: 'Come funziona lo Stilizzatore di Testo?',
+      answer: 'Inserisci il tuo testo e scegli uno stile. Il testo verrà automaticamente trasformato e può essere copiato con un clic.'
+    },
+    {
+      question: 'Gli stili sono leggibili ovunque?',
+      answer: 'La leggibilità può variare a seconda della piattaforma e del supporto dei caratteri. Alcuni stili potrebbero non essere disponibili ovunque.'
+    },
+    {
+      question: 'Cos\'è lo Stilizzatore di Testo e come funziona?',
+      answer: 'Lo Stilizzatore di Testo su smileys.lol è uno strumento che ti permette di convertire il testo normale in vari stili di carattere stilizzati. Basta inserire il testo, scegliere lo stile desiderato, e lo Stilizzatore di Testo genererà il testo formattato per te.'
+    },
+    {
+      question: 'Quali stili di testo posso creare con lo Stilizzatore di Testo (ad esempio, grassetto, corsivo, decorativo)?',
+      answer: 'Lo Stilizzatore di Testo offre una varietà di stili di testo, tra cui grassetto, corsivo, sottolineato, barrato e caratteri decorativi, adatti a diverse occasioni e piattaforme.'
+    },
+    {
+      question: 'Come posso utilizzare il testo stilizzato nei social media o nei messaggi?',
+      answer: 'Dopo aver formattato il testo con lo Stilizzatore di Testo, copia il testo stilizzato e incollalo nei tuoi social media, messaggi o post. La maggior parte delle piattaforme supporta questi caratteri speciali.'
+    },
+    {
+      question: 'Lo Stilizzatore di Testo è compatibile con tutte le piattaforme e dispositivi?',
+      answer: 'I caratteri generati dallo Stilizzatore di Testo sono supportati dalla maggior parte delle piattaforme e dispositivi moderni. Tuttavia, in rari casi, potrebbero esserci differenze nella visualizzazione.'
+    },
+    {
+      question: 'Posso utilizzare lo Stilizzatore di Testo gratuitamente?',
+      answer: 'Sì, lo Stilizzatore di Testo su smileys.lol è uno strumento gratuito che puoi utilizzare senza restrizioni per i tuoi testi.'
+    },
+    {
+      question: 'C\'è un limite di caratteri per il testo che voglio stilizzare?',
+      answer: 'Lo Stilizzatore di Testo non ha un limite di caratteri specifico. Tuttavia, tieni presente che alcune piattaforme o applicazioni potrebbero avere proprie limitazioni sul numero di caratteri.'
+    },
+    {
+      question: 'Come posso assicurarmi che il testo stilizzato venga visualizzato correttamente?',
+      answer: 'Per assicurarti che il testo stilizzato venga visualizzato correttamente, testalo sulla piattaforma o sul dispositivo desiderato. Nella maggior parte dei casi, i caratteri verranno visualizzati senza problemi.'
+    },
+    {
+      question: 'Posso utilizzare lo Stilizzatore di Testo per stilizzare testo in diverse lingue?',
+      answer: 'Sì, lo Stilizzatore di Testo supporta testi in diverse lingue. Basta inserire il testo desiderato nella rispettiva lingua, e lo Stilizzatore di Testo lo formatterà di conseguenza.'
+    }
+  ],
+  technical: [
+    {
+      question: 'I caratteri speciali sono supportati?',
+      answer: 'Sì, la maggior parte dei caratteri speciali è supportata. Tuttavia, potrebbero esserci limitazioni con alcuni stili più complessi.'
+    },
+    {
+      question: 'C\'è un limite di lunghezza?',
+      answer: 'No, non c\'è un limite di lunghezza rigido. Tuttavia, per testi molto lunghi, l\'elaborazione potrebbe richiedere un po\' più di tempo.'
+    }
+  ]
+},
+  pt: {
+  general: [
+    {
+      question: 'Como funciona o Estilizador de Texto?',
+      answer: 'Insira seu texto e escolha um estilo. O texto será automaticamente transformado e pode ser copiado com um clique.'
+    },
+    {
+      question: 'Os estilos são legíveis em todos os lugares?',
+      answer: 'A legibilidade pode variar dependendo da plataforma e do suporte de fontes. Alguns estilos podem não estar disponíveis em todos os lugares.'
+    },
+    {
+      question: 'O que é o Estilizador de Texto e como ele funciona?',
+      answer: 'O Estilizador de Texto no smileys.lol é uma ferramenta que permite converter texto normal em vários estilos de fonte estilizados. Basta inserir seu texto, escolher o estilo desejado, e o Estilizador de Texto gera o texto formatado para você.'
+    },
+    {
+      question: 'Quais estilos de texto posso criar com o Estilizador de Texto (por exemplo, negrito, itálico, decorativo)?',
+      answer: 'O Estilizador de Texto oferece uma variedade de estilos de texto, incluindo negrito, itálico, sublinhado, tachado e fontes decorativas, adequadas para diferentes ocasiões e plataformas.'
+    },
+    {
+      question: 'Como posso usar o texto estilizado em redes sociais ou mensagens?',
+      answer: 'Após formatar seu texto com o Estilizador de Texto, copie o texto estilizado e cole-o em suas redes sociais, mensagens ou postagens. A maioria das plataformas suporta essas fontes especiais.'
+    },
+    {
+      question: 'O Estilizador de Texto é compatível com todas as plataformas e dispositivos?',
+      answer: 'As fontes geradas pelo Estilizador de Texto são suportadas pela maioria das plataformas e dispositivos modernos. No entanto, em casos raros, pode haver diferenças na exibição.'
+    },
+    {
+      question: 'Posso usar o Estilizador de Texto gratuitamente?',
+      answer: 'Sim, o Estilizador de Texto no smileys.lol é uma ferramenta gratuita que você pode usar sem restrições para seus textos.'
+    },
+    {
+      question: 'Existe um limite de caracteres para o texto que desejo estilizar?',
+      answer: 'O Estilizador de Texto não tem um limite específico de caracteres. No entanto, observe que algumas plataformas ou aplicativos podem ter suas próprias limitações no número de caracteres.'
+    },
+    {
+      question: 'Como posso garantir que o texto estilizado seja exibido corretamente?',
+      answer: 'Para garantir que o texto estilizado seja exibido corretamente, teste-o na plataforma ou dispositivo desejado. Na maioria dos casos, as fontes serão exibidas sem problemas.'
+    },
+    {
+      question: 'Posso usar o Estilizador de Texto para estilizar texto em diferentes idiomas?',
+      answer: 'Sim, o Estilizador de Texto suporta textos em diferentes idiomas. Basta inserir o texto desejado no respectivo idioma, e o Estilizador de Texto o formatará de acordo.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Os caracteres especiais são suportados?',
+      answer: 'Sim, a maioria dos caracteres especiais é suportada. No entanto, pode haver limitações com alguns estilos mais complexos.'
+    },
+    {
+      question: 'Existe um limite de comprimento?',
+      answer: 'Não, não há um limite rígido de comprimento. No entanto, para textos muito longos, o processamento pode levar um pouco mais de tempo.'
+    }
+  ]
+},
+  nl: {
+  general: [
+    {
+      question: 'Hoe werkt de Tekststyler?',
+      answer: 'Voer uw tekst in en kies een stijl. De tekst wordt automatisch getransformeerd en kan met één klik worden gekopieerd.'
+    },
+    {
+      question: 'Zijn de stijlen overal leesbaar?',
+      answer: 'De leesbaarheid kan variëren afhankelijk van het platform en de lettertype-ondersteuning. Sommige stijlen zijn mogelijk niet overal beschikbaar.'
+    },
+    {
+      question: 'Wat is de Tekststyler en hoe werkt het?',
+      answer: 'De Tekststyler op smileys.lol is een tool waarmee u normale tekst kunt omzetten in verschillende gestileerde lettertypen. Voer gewoon uw tekst in, kies de gewenste stijl, en de Tekststyler genereert de opgemaakte tekst voor u.'
+    },
+    {
+      question: 'Welke tekststijlen kan ik maken met de Tekststyler (bijvoorbeeld vet, cursief, decoratief)?',
+      answer: 'De Tekststyler biedt een verscheidenheid aan tekststijlen, waaronder vet, cursief, onderstreept, doorgestreept en decoratieve lettertypen, geschikt voor verschillende gelegenheden en platforms.'
+    },
+    {
+      question: 'Hoe kan ik de gestileerde tekst gebruiken in sociale media of berichten?',
+      answer: 'Nadat u uw tekst hebt opgemaakt met de Tekststyler, kopieert u de gestileerde tekst en plakt u deze in uw sociale media, berichten of posts. De meeste platforms ondersteunen deze speciale lettertypen.'
+    },
+    {
+      question: 'Is de Tekststyler compatibel met alle platforms en apparaten?',
+      answer: 'De lettertypen die door de Tekststyler worden gegenereerd, worden ondersteund door de meeste moderne platforms en apparaten. In zeldzame gevallen kunnen er echter verschillen zijn in de weergave.'
+    },
+    {
+      question: 'Kan ik de Tekststyler gratis gebruiken?',
+      answer: 'Ja, de Tekststyler op smileys.lol is een gratis tool die u zonder beperkingen kunt gebruiken voor uw teksten.'
+    },
+    {
+      question: 'Is er een tekenlimiet voor de tekst die ik wil stileren?',
+      answer: 'De Tekststyler heeft geen specifieke tekenlimiet. Houd er echter rekening mee dat sommige platforms of applicaties hun eigen beperkingen kunnen hebben op het aantal tekens.'
+    },
+    {
+      question: 'Hoe kan ik ervoor zorgen dat de gestileerde tekst correct wordt weergegeven?',
+      answer: 'Om ervoor te zorgen dat de gestileerde tekst correct wordt weergegeven, test u deze op het gewenste platform of apparaat. In de meeste gevallen worden de lettertypen probleemloos weergegeven.'
+    },
+    {
+      question: 'Kan ik de Tekststyler gebruiken om tekst in verschillende talen te stileren?',
+      answer: 'Ja, de Tekststyler ondersteunt teksten in verschillende talen. Voer gewoon de gewenste tekst in de respectievelijke taal in, en de Tekststyler zal deze dienovereenkomstig opmaken.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Worden speciale tekens ondersteund?',
+      answer: 'Ja, de meeste speciale tekens worden ondersteund. Er kunnen echter beperkingen zijn bij sommige complexere stijlen.'
+    },
+    {
+      question: 'Is er een lengtegrens?',
+      answer: 'Nee, er is geen strikte lengtegrens. Voor zeer lange teksten kan de verwerking echter iets langer duren.'
+    }
+  ]
+},
+  pl: {
+  general: [
+    {
+      question: 'Jak działa Stylizator Tekstu?',
+      answer: 'Wprowadź swój tekst i wybierz styl. Tekst zostanie automatycznie przekształcony i może być skopiowany jednym kliknięciem.'
+    },
+    {
+      question: 'Czy style są czytelne wszędzie?',
+      answer: 'Czytelność może się różnić w zależności od platformy i obsługi czcionek. Niektóre style mogą nie być dostępne wszędzie.'
+    },
+    {
+      question: 'Co to jest Stylizator Tekstu i jak działa?',
+      answer: 'Stylizator Tekstu na smileys.lol to narzędzie, które pozwala przekształcić zwykły tekst w różne stylizowane czcionki. Wystarczy wprowadzić tekst, wybrać pożądany styl, a Stylizator Tekstu wygeneruje dla Ciebie sformatowany tekst.'
+    },
+    {
+      question: 'Jakie style tekstu mogę tworzyć za pomocą Stylizatora Tekstu (np. pogrubienie, kursywa, ozdobne)?',
+      answer: 'Stylizator Tekstu oferuje różnorodne style tekstu, w tym pogrubienie, kursywę, podkreślenie, przekreślenie i ozdobne czcionki, odpowiednie dla różnych okazji i platform.'
+    },
+    {
+      question: 'Jak mogę używać stylizowanego tekstu w mediach społecznościowych lub wiadomościach?',
+      answer: 'Po sformatowaniu tekstu za pomocą Stylizatora Tekstu, skopiuj stylizowany tekst i wklej go do swoich mediów społecznościowych, wiadomości lub postów. Większość platform obsługuje te specjalne czcionki.'
+    },
+    {
+      question: 'Czy Stylizator Tekstu jest kompatybilny ze wszystkimi platformami i urządzeniami?',
+      answer: 'Czcionki generowane przez Stylizator Tekstu są obsługiwane przez większość nowoczesnych platform i urządzeń. Jednak w rzadkich przypadkach mogą wystąpić różnice w wyświetlaniu.'
+    },
+    {
+      question: 'Czy mogę korzystać ze Stylizatora Tekstu za darmo?',
+      answer: 'Tak, Stylizator Tekstu na smileys.lol jest darmowym narzędziem, które możesz używać bez ograniczeń do swoich tekstów.'
+    },
+    {
+      question: 'Czy istnieje limit znaków dla tekstu, który chcę stylizować?',
+      answer: 'Stylizator Tekstu nie ma określonego limitu znaków. Jednak pamiętaj, że niektóre platformy lub aplikacje mogą mieć własne ograniczenia dotyczące liczby znaków.'
+    },
+    {
+      question: 'Jak mogę upewnić się, że stylizowany tekst jest poprawnie wyświetlany?',
+      answer: 'Aby upewnić się, że stylizowany tekst jest poprawnie wyświetlany, przetestuj go na pożądanej platformie lub urządzeniu. W większości przypadków czcionki będą wyświetlane bez problemu.'
+    },
+    {
+      question: 'Czy mogę używać Stylizatora Tekstu do stylizowania tekstu w różnych językach?',
+      answer: 'Tak, Stylizator Tekstu obsługuje teksty w różnych językach. Wystarczy wprowadzić pożądany tekst w odpowiednim języku, a Stylizator Tekstu sformatuje go odpowiednio.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Czy znaki specjalne są obsługiwane?',
+      answer: 'Tak, większość znaków specjalnych jest obsługiwana. Mogą jednak wystąpić ograniczenia w przypadku niektórych bardziej złożonych stylów.'
+    },
+    {
+      question: 'Czy istnieje limit długości?',
+      answer: 'Nie, nie ma ścisłego limitu długości. Jednak w przypadku bardzo długich tekstów przetwarzanie może zająć nieco więcej czasu.'
+    }
+  ]
+},
+  ru: {
+  general: [
+    {
+      question: 'Как работает Стилизатор текста?',
+      answer: 'Введите свой текст и выберите стиль. Текст будет автоматически преобразован и может быть скопирован одним щелчком мыши.'
+    },
+    {
+      question: 'Читаемы ли стили везде?',
+      answer: 'Читаемость может варьироваться в зависимости от платформы и поддержки шрифтов. Некоторые стили могут быть недоступны везде.'
+    },
+    {
+      question: 'Что такое Стилизатор текста и как он работает?',
+      answer: 'Стилизатор текста на smileys.lol - это инструмент, который позволяет преобразовывать обычный текст в различные стилизованные шрифты. Просто введите свой текст, выберите желаемый стиль, и Стилизатор текста сгенерирует отформатированный текст для вас.'
+    },
+    {
+      question: 'Какие стили текста я могу создать с помощью Стилизатора текста (например, жирный, курсив, декоративный)?',
+      answer: 'Стилизатор текста предлагает разнообразные стили текста, включая жирный, курсив, подчеркнутый, зачеркнутый и декоративные шрифты, подходящие для различных случаев и платформ.'
+    },
+    {
+      question: 'Как я могу использовать стилизованный текст в социальных сетях или сообщениях?',
+      answer: 'После форматирования текста с помощью Стилизатора текста, скопируйте стилизованный текст и вставьте его в свои социальные сети, сообщения или посты. Большинство платформ поддерживают эти специальные шрифты.'
+    },
+    {
+      question: 'Совместим ли Стилизатор текста со всеми платформами и устройствами?',
+      answer: 'Шрифты, генерируемые Стилизатором текста, поддерживаются большинством современных платформ и устройств. Однако в редких случаях могут быть различия в отображении.'
+    },
+    {
+      question: 'Могу ли я использовать Стилизатор текста бесплатно?',
+      answer: 'Да, Стилизатор текста на smileys.lol - это бесплатный инструмент, который вы можете использовать без ограничений для своих текстов.'
+    },
+    {
+      question: 'Есть ли ограничение на количество символов для текста, который я хочу стилизовать?',
+      answer: 'Стилизатор текста не имеет конкретного ограничения на количество символов. Однако имейте в виду, что некоторые платформы или приложения могут иметь собственные ограничения на количество символов.'
+    },
+    {
+      question: 'Как я могу убедиться, что стилизованный текст отображается правильно?',
+      answer: 'Чтобы убедиться, что стилизованный текст отображается правильно, протестируйте его на желаемой платформе или устройстве. В большинстве случаев шрифты будут отображаться без проблем.'
+    },
+    {
+      question: 'Могу ли я использовать Стилизатор текста для стилизации текста на разных языках?',
+      answer: 'Да, Стилизатор текста поддерживает тексты на разных языках. Просто введите желаемый текст на соответствующем языке, и Стилизатор текста отформатирует его соответствующим образом.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Поддерживаются ли специальные символы?',
+      answer: 'Да, большинство специальных символов поддерживается. Однако могут быть ограничения с некоторыми более сложными стилями.'
+    },
+    {
+      question: 'Есть ли ограничение по длине?',
+      answer: 'Нет, строгого ограничения по длине нет. Однако для очень длинных текстов обработка может занять немного больше времени.'
+    }
+  ]
+},
+  ja: {
+  general: [
+    {
+      question: 'テキストスタイラーはどのように機能しますか？',
+      answer: 'テキストを入力してスタイルを選択するだけです。テキストは自動的に変換され、クリック一つでコピーできます。'
+    },
+    {
+      question: 'スタイルはどこでも読みやすいですか？',
+      answer: '読みやすさは、プラットフォームとフォントのサポートによって異なる場合があります。一部のスタイルはどこでも利用できない可能性があります。'
+    },
+    {
+      question: 'テキストスタイラーとは何で、どのように機能しますか？',
+      answer: 'テキストスタイラーは、通常のテキストを様々なスタイリッシュなフォントに変換できるツールです。テキストを入力し、希望のスタイルを選択するだけで、テキストスタイラーがフォーマットされたテキストを生成します。'
+    },
+    {
+      question: 'テキストスタイラーでどのようなテキストスタイル（例：太字、斜体、装飾）を作成できますか？',
+      answer: 'テキストスタイラーは、太字、斜体、下線、取り消し線、装飾フォントなど、様々な場面やプラットフォームに適したテキストスタイルを提供しています。'
+    },
+    {
+      question: 'スタイリングされたテキストをソーシャルメディアやメッセージでどのように使用できますか？',
+      answer: 'テキストスタイラーでテキストをフォーマットした後、スタイリングされたテキストをコピーし、ソーシャルメディア、メッセージ、投稿に貼り付けます。ほとんどのプラットフォームがこれらの特殊フォントをサポートしています。'
+    },
+    {
+      question: 'テキストスタイラーはすべてのプラットフォームやデバイスと互換性がありますか？',
+      answer: 'テキストスタイラーで生成されたフォントは、ほとんどの最新のプラットフォームやデバイスでサポートされています。ただし、まれに表示の違いが生じる場合があります。'
+    },
+    {
+      question: 'テキストスタイラーを無料で使用できますか？',
+      answer: 'はい、テキストスタイラーは無料のツールで、テキストに制限なく使用できます。'
+    },
+    {
+      question: 'スタイリングしたいテキストに文字数制限はありますか？',
+      answer: 'テキストスタイラーには特定の文字数制限はありません。ただし、一部のプラットフォームやアプリケーションには独自の文字数制限がある場合があります。'
+    },
+    {
+      question: 'スタイリングされたテキストが正しく表示されることをどのように確認できますか？',
+      answer: 'スタイリングされたテキストが正しく表示されることを確認するには、目的のプラットフォームやデバイスでテストしてください。ほとんどの場合、フォントは問題なく表示されます。'
+    },
+    {
+      question: 'テキストスタイラーを使用して、異なる言語のテキストをスタイリングできますか？',
+      answer: 'はい、テキストスタイラーは様々な言語のテキストをサポートしています。希望の言語でテキストを入力するだけで、テキストスタイラーがそれに応じてフォーマットします。'
+    }
+  ],
+  technical: [
+    {
+      question: '特殊文字はサポートされていますか？',
+      answer: 'はい、ほとんどの特殊文字がサポートされています。ただし、一部の複雑なスタイルでは制限がある場合があります。'
+    },
+    {
+      question: '長さ制限はありますか？',
+      answer: '厳密な長さ制限はありません。ただし、非常に長いテキストの場合、処理に時間がかかる場合があります。'
+    }
+  ]
+},
+  ko: {
+  general: [
+    {
+      question: '텍스트 스타일러는 어떻게 작동하나요?',
+      answer: '텍스트를 입력하고 스타일을 선택하면 됩니다. 텍스트는 자동으로 변환되며 클릭 한 번으로 복사할 수 있습니다.'
+    },
+    {
+      question: '스타일은 모든 곳에서 읽을 수 있나요?',
+      answer: '가독성은 플랫폼과 폰트 지원에 따라 다를 수 있습니다. 일부 스타일은 모든 곳에서 사용할 수 없을 수 있습니다.'
+    },
+    {
+      question: '텍스트 스타일러란 무엇이며 어떻게 작동하나요?',
+      answer: '텍스트 스타일러는 일반 텍스트를 다양한 스타일의 폰트로 변환할 수 있는 도구입니다. 텍스트를 입력하고 원하는 스타일을 선택하면 텍스트 스타일러가 포맷된 텍스트를 생성합니다.'
+    },
+    {
+      question: '텍스트 스타일러로 어떤 텍스트 스타일(예: 굵게, 기울임꼴, 장식)을 만들 수 있나요?',
+      answer: '텍스트 스타일러는 굵게, 기울임꼴, 밑줄, 취소선, 장식 폰트 등 다양한 상황과 플랫폼에 적합한 텍스트 스타일을 제공합니다.'
+    },
+    {
+      question: '스타일링된 텍스트를 소셜 미디어나 메시지에서 어떻게 사용할 수 있나요?',
+      answer: '텍스트 스타일러로 텍스트를 포맷한 후, 스타일링된 텍스트를 복사하여 소셜 미디어, 메시지 또는 게시물에 붙여넣으면 됩니다. 대부분의 플랫폼에서 이러한 특수 폰트를 지원합니다.'
+    },
+    {
+      question: '텍스트 스타일러는 모든 플랫폼과 기기와 호환되나요?',
+      answer: '텍스트 스타일러로 생성된 폰트는 대부분의 현대적인 플랫폼과 기기에서 지원됩니다. 그러나 드물게 표시 차이가 있을 수 있습니다.'
+    },
+    {
+      question: '텍스트 스타일러를 무료로 사용할 수 있나요?',
+      answer: '네, 텍스트 스타일러는 무료 도구이며 텍스트에 제한 없이 사용할 수 있습니다.'
+    },
+    {
+      question: '스타일링하려는 텍스트에 문자 제한이 있나요?',
+      answer: '텍스트 스타일러에는 특정 문자 제한이 없습니다. 그러나 일부 플랫폼이나 애플리케이션에는 자체적인 문자 수 제한이 있을 수 있습니다.'
+    },
+    {
+      question: '스타일링된 텍스트가 올바르게 표시되는지 어떻게 확인할 수 있나요?',
+      answer: '스타일링된 텍스트가 올바르게 표시되는지 확인하려면 원하는 플랫폼이나 기기에서 테스트해보세요. 대부분의 경우 폰트는 문제없이 표시됩니다.'
+    },
+    {
+      question: '텍스트 스타일러를 사용하여 다른 언어의 텍스트를 스타일링할 수 있나요?',
+      answer: '네, 텍스트 스타일러는 다양한 언어의 텍스트를 지원합니다. 원하는 언어로 텍스트를 입력하면 텍스트 스타일러가 그에 맞게 포맷합니다.'
+    }
+  ],
+  technical: [
+    {
+      question: '특수 문자가 지원되나요?',
+      answer: '네, 대부분의 특수 문자가 지원됩니다. 그러나 일부 복잡한 스타일에서는 제한이 있을 수 있습니다.'
+    },
+    {
+      question: '길이 제한이 있나요?',
+      answer: '엄격한 길이 제한은 없습니다. 그러나 매우 긴 텍스트의 경우 처리 시간이 조금 더 걸릴 수 있습니다.'
+    }
+  ]
+},
+  zh: {
+  general: [
+    {
+      question: '文本样式器如何工作？',
+      answer: '输入您的文本并选择一种样式。文本将自动转换，并可以一键复制。'
+    },
+    {
+      question: '这些样式在所有地方都可读吗？',
+      answer: '可读性可能因平台和字体支持而异。某些样式可能并非在所有地方都可用。'
+    },
+    {
+      question: '什么是文本样式器，它是如何工作的？',
+      answer: 'smileys.lol上的文本样式器是一个工具，可以将普通文本转换为各种风格化的字体。只需输入您的文本，选择所需的样式，文本样式器就会为您生成格式化的文本。'
+    },
+    {
+      question: '我可以用文本样式器创建哪些文本样式（例如粗体、斜体、装饰性）？',
+      answer: '文本样式器提供各种文本样式，包括粗体、斜体、下划线、删除线和装饰性字体，适用于不同场合和平台。'
+    },
+    {
+      question: '我如何在社交媒体或消息中使用样式化的文本？',
+      answer: '使用文本样式器格式化文本后，复制样式化的文本并将其粘贴到您的社交媒体、消息或帖子中。大多数平台都支持这些特殊字体。'
+    },
+    {
+      question: '文本样式器是否与所有平台和设备兼容？',
+      answer: '文本样式器生成的字体受大多数现代平台和设备支持。然而，在罕见的情况下，可能会有显示差异。'
+    },
+    {
+      question: '我可以免费使用文本样式器吗？',
+      answer: '是的，smileys.lol上的文本样式器是一个免费工具，您可以无限制地用于您的文本。'
+    },
+    {
+      question: '我想样式化的文本有字符限制吗？',
+      answer: '文本样式器没有特定的字符限制。但请注意，某些平台或应用程序可能有自己的字符数限制。'
+    },
+    {
+      question: '我如何确保样式化的文本正确显示？',
+      answer: '要确保样式化的文本正确显示，请在所需的平台或设备上进行测试。在大多数情况下，字体将正常显示。'
+    },
+    {
+      question: '我可以使用文本样式器来样式化不同语言的文本吗？',
+      answer: '是的，文本样式器支持不同语言的文本。只需输入所需语言的文本，文本样式器就会相应地格式化它。'
+    }
+  ],
+  technical: [
+    {
+      question: '是否支持特殊字符？',
+      answer: '是的，大多数特殊字符都受支持。但是，某些更复杂的样式可能有限制。'
+    },
+    {
+      question: '有长度限制吗？',
+      answer: '没有严格的长度限制。但是，对于非常长的文本，处理可能需要稍长的时间。'
+    }
+  ]
+},
+  hi: {
+  general: [
+    {
+      question: 'टेक्स्ट स्टाइलर कैसे काम करता है?',
+      answer: 'अपना टेक्स्ट दर्ज करें और एक स्टाइल चुनें। टेक्स्ट स्वचालित रूप से परिवर्तित हो जाएगा और एक क्लिक से कॉपी किया जा सकता है।'
+    },
+    {
+      question: 'क्या स्टाइल हर जगह पढ़ने योग्य हैं?',
+      answer: 'पठनीयता प्लेटफ़ॉर्म और फ़ॉन्ट समर्थन के आधार पर भिन्न हो सकती है। कुछ स्टाइल हर जगह उपलब्ध नहीं हो सकते हैं।'
+    },
+    {
+      question: 'टेक्स्ट स्टाइलर क्या है और यह कैसे काम करता है?',
+      answer: 'smileys.lol पर टेक्स्ट स्टाइलर एक ऐसा टूल है जो सामान्य टेक्स्ट को विभिन्न स्टाइलिश फ़ॉन्ट्स में बदल सकता है। बस अपना टेक्स्ट दर्ज करें, वांछित स्टाइल चुनें, और टेक्स्ट स्टाइलर आपके लिए फ़ॉर्मेटेड टेक्स्ट तैयार कर देगा।'
+    },
+    {
+      question: 'मैं टेक्स्ट स्टाइलर के साथ कौन से टेक्स्ट स्टाइल बना सकता हूँ (जैसे बोल्ड, इटैलिक, सजावटी)?',
+      answer: 'टेक्स्ट स्टाइलर विभिन्न टेक्स्ट स्टाइल प्रदान करता है, जिसमें बोल्ड, इटैलिक, अंडरलाइन, स्ट्राइकथ्रू और सजावटी फ़ॉन्ट शामिल हैं, जो विभिन्न अवसरों और प्लेटफ़ॉर्म के लिए उपयुक्त हैं।'
+    },
+    {
+      question: 'मैं स्टाइल किए गए टेक्स्ट का उपयोग सोशल मीडिया या संदेशों में कैसे कर सकता हूँ?',
+      answer: 'टेक्स्ट स्टाइलर के साथ अपने टेक्स्ट को फ़ॉर्मेट करने के बाद, स्टाइल किए गए टेक्स्ट को कॉपी करें और इसे अपने सोशल मीडिया, संदेशों या पोस्ट में पेस्ट करें। अधिकांश प्लेटफ़ॉर्म इन विशेष फ़ॉन्ट्स का समर्थन करते हैं।'
+    },
+    {
+      question: 'क्या टेक्स्ट स्टाइलर सभी प्लेटफ़ॉर्म और डिवाइस के साथ संगत है?',
+      answer: 'टेक्स्ट स्टाइलर द्वारा उत्पन्न फ़ॉन्ट्स अधिकांश आधुनिक प्लेटफ़ॉर्म और डिवाइस द्वारा समर्थित हैं। हालाँकि, दुर्लभ मामलों में, प्रदर्शन में अंतर हो सकता है।'
+    },
+    {
+      question: 'क्या मैं टेक्स्ट स्टाइलर का उपयोग मुफ्त में कर सकता हूँ?',
+      answer: 'हाँ, smileys.lol पर टेक्स्ट स्टाइलर एक मुफ्त टूल है जिसे आप अपने टेक्स्ट के लिए बिना किसी प्रतिबंध के उपयोग कर सकते हैं।'
+    },
+    {
+      question: 'क्या मेरे स्टाइल करने वाले टेक्स्ट के लिए कोई वर्ण सीमा है?',
+      answer: 'टेक्स्ट स्टाइलर की कोई विशिष्ट वर्ण सीमा नहीं है। हालाँकि, ध्यान रखें कि कुछ प्लेटफ़ॉर्म या एप्लिकेशन में वर्णों की संख्या पर अपनी सीमाएँ हो सकती हैं।'
+    },
+    {
+      question: 'मैं कैसे सुनिश्चित कर सकता हूँ कि स्टाइल किया गया टेक्स्ट सही ढंग से प्रदर्शित हो रहा है?',
+      answer: 'स्टाइल किए गए टेक्स्ट के सही प्रदर्शन को सुनिश्चित करने के लिए, इसे वांछित प्लेटफ़ॉर्म या डिवाइस पर परीक्षण करें। अधिकांश मामलों में, फ़ॉन्ट बिना किसी समस्या के प्रदर्शित होंगे।'
+    },
+    {
+      question: 'क्या मैं विभिन्न भाषाओं में टेक्स्ट को स्टाइल करने के लिए टेक्स्ट स्टाइलर का उपयोग कर सकता हूँ?',
+      answer: 'हाँ, टेक्स्ट स्टाइलर विभिन्न भाषाओं में टेक्स्ट का समर्थन करता है। बस वांछित भाषा में टेक्स्ट दर्ज करें, और टेक्स्ट स्टाइलर उसे तदनुसार फ़ॉर्मेट करेगा।'
+    }
+  ],
+  technical: [
+    {
+      question: 'क्या विशेष वर्णों का समर्थन किया जाता है?',
+      answer: 'हाँ, अधिकांश विशेष वर्णों का समर्थन किया जाता है। हालाँकि, कुछ अधिक जटिल स्टाइल के साथ सीमाएँ हो सकती हैं।'
+    },
+    {
+      question: 'क्या कोई लंबाई सीमा है?',
+      answer: 'कोई सख्त लंबाई सीमा नहीं है। हालाँकि, बहुत लंबे टेक्स्ट के लिए, प्रोसेसिंग में थोड़ा अधिक समय लग सकता है।'
+    }
+  ]
+},
+  ar: {
+  general: [
+    {
+      question: 'كيف يعمل محول النصوص؟',
+      answer: 'أدخل النص الخاص بك واختر نمطًا. سيتم تحويل النص تلقائيًا ويمكن نسخه بنقرة واحدة.'
+    },
+    {
+      question: 'هل الأنماط مقروءة في كل مكان؟',
+      answer: 'قد تختلف إمكانية القراءة حسب المنصة ودعم الخطوط. قد لا تتوفر بعض الأنماط في كل مكان.'
+    },
+    {
+      question: 'ما هو محول النصوص وكيف يعمل؟',
+      answer: 'محول النصوص على smileys.lol هو أداة تتيح لك تحويل النص العادي إلى خطوط منمقة مختلفة. ما عليك سوى إدخال النص واختيار النمط المطلوب، وسيقوم محول النصوص بإنشاء النص المنسق لك.'
+    },
+    {
+      question: 'ما هي أنماط النص التي يمكنني إنشاؤها باستخدام محول النصوص (مثل العريض، المائل، الزخرفي)؟',
+      answer: 'يوفر محول النصوص مجموعة متنوعة من أنماط النص، بما في ذلك العريض والمائل والمسطر والمشطوب والخطوط الزخرفية، المناسبة لمختلف المناسبات والمنصات.'
+    },
+    {
+      question: 'كيف يمكنني استخدام النص المنمق في وسائل التواصل الاجتماعي أو الرسائل؟',
+      answer: 'بعد تنسيق النص باستخدام محول النصوص، انسخ النص المنمق والصقه في وسائل التواصل الاجتماعي أو الرسائل أو المنشورات الخاصة بك. معظم المنصات تدعم هذه الخطوط الخاصة.'
+    },
+    {
+      question: 'هل محول النصوص متوافق مع جميع المنصات والأجهزة؟',
+      answer: 'الخطوط التي ينتجها محول النصوص مدعومة من قبل معظم المنصات والأجهزة الحديثة. ومع ذلك، في حالات نادرة، قد تكون هناك اختلافات في العرض.'
+    },
+    {
+      question: 'هل يمكنني استخدام محول النصوص مجانًا؟',
+      answer: 'نعم، محول النصوص على smileys.lol هو أداة مجانية يمكنك استخدامها بدون قيود لنصوصك.'
+    },
+    {
+      question: 'هل هناك حد للأحرف للنص الذي أريد تنميقه؟',
+      answer: 'لا يوجد لدى محول النصوص حد معين للأحرف. ومع ذلك، لاحظ أن بعض المنصات أو التطبيقات قد يكون لديها قيود خاصة بها على عدد الأحرف.'
+    },
+    {
+      question: 'كيف يمكنني التأكد من أن النص المنمق يظهر بشكل صحيح؟',
+      answer: 'للتأكد من أن النص المنمق يظهر بشكل صحيح، اختبره على المنصة أو الجهاز المطلوب. في معظم الحالات، ستظهر الخطوط بدون مشاكل.'
+    },
+    {
+      question: 'هل يمكنني استخدام محول النصوص لتنميق النص بلغات مختلفة؟',
+      answer: 'نعم، يدعم محول النصوص النصوص بلغات مختلفة. ما عليك سوى إدخال النص المطلوب باللغة المعنية، وسيقوم محول النصوص بتنسيقه وفقًا لذلك.'
+    }
+  ],
+  technical: [
+    {
+      question: 'هل الأحرف الخاصة مدعومة؟',
+      answer: 'نعم، معظم الأحرف الخاصة مدعومة. ومع ذلك، قد تكون هناك قيود مع بعض الأنماط الأكثر تعقيدًا.'
+    },
+    {
+      question: 'هل هناك حد للطول؟',
+      answer: 'لا، لا يوجد حد صارم للطول. ومع ذلك، بالنسبة للنصوص الطويلة جدًا، قد تستغرق المعالجة وقتًا أطول قليلاً.'
+    }
+  ]
+},
+  bn: {
+  general: [
+    {
+      question: 'টেক্সট স্টাইলার কীভাবে কাজ করে?',
+      answer: 'আপনার টেক্সট লিখুন এবং একটি স্টাইল বেছে নিন। টেক্সটটি স্বয়ংক্রিয়ভাবে রূপান্তরিত হবে এবং এক ক্লিকে কপি করা যাবে।'
+    },
+    {
+      question: 'স্টাইলগুলি কি সব জায়গায় পড়া যায়?',
+      answer: 'পাঠযোগ্যতা প্ল্যাটফর্ম এবং ফন্ট সমর্থনের উপর নির্ভর করে পরিবর্তিত হতে পারে। কিছু স্টাইল সব জায়গায় উপলব্ধ নাও হতে পারে।'
+    },
+    {
+      question: 'টেক্সট স্টাইলার কী এবং এটি কীভাবে কাজ করে?',
+      answer: 'smileys.lol-এ টেক্সট স্টাইলার হল একটি টুল যা আপনাকে সাধারণ টেক্সটকে বিভিন্ন স্টাইলযুক্ত ফন্টে রূপান্তর করতে দেয়। আপনার টেক্সট লিখুন, পছন্দসই স্টাইল বেছে নিন, এবং টেক্সট স্টাইলার আপনার জন্য ফরম্যাট করা টেক্সট তৈরি করবে।'
+    },
+    {
+      question: 'আমি টেক্সট স্টাইলার দিয়ে কী ধরনের টেক্সট স্টাইল তৈরি করতে পারি (যেমন বোল্ড, ইটালিক, সাজানো)?',
+      answer: 'টেক্সট স্টাইলার বিভিন্ন টেক্সট স্টাইল প্রদান করে, যার মধ্যে রয়েছে বোল্ড, ইটালিক, আন্ডারলাইন, স্ট্রাইকথ্রু এবং সাজানো ফন্ট, যা বিভিন্ন অনুষ্ঠান এবং প্ল্যাটফর্মের জন্য উপযুক্ত।'
+    },
+    {
+      question: 'আমি কীভাবে সোশ্যাল মিডিয়া বা বার্তায় স্টাইল করা টেক্সট ব্যবহার করতে পারি?',
+      answer: 'টেক্সট স্টাইলার দিয়ে আপনার টেক্সট ফরম্যাট করার পর, স্টাইল করা টেক্সটটি কপি করুন এবং আপনার সোশ্যাল মিডিয়া, বার্তা বা পোস্টে পেস্ট করুন। বেশিরভাগ প্ল্যাটফর্ম এই বিশেষ ফন্টগুলি সমর্থন করে।'
+    },
+    {
+      question: 'টেক্সট স্টাইলার কি সব প্ল্যাটফর্ম এবং ডিভাইসের সাথে সামঞ্জস্যপূর্ণ?',
+      answer: 'টেক্সট স্টাইলার দ্বারা উৎপন্ন ফন্টগুলি বেশিরভাগ আধুনিক প্ল্যাটফর্ম এবং ডিভাইস দ্বারা সমর্থিত। তবে, বিরল ক্ষেত্রে, প্রদর্শনে পার্থক্য থাকতে পারে।'
+    },
+    {
+      question: 'আমি কি টেক্সট স্টাইলার বিনামূল্যে ব্যবহার করতে পারি?',
+      answer: 'হ্যাঁ, smileys.lol-এ টেক্সট স্টাইলার একটি বিনামূল্যের টুল যা আপনি আপনার টেক্সটের জন্য কোনো সীমাবদ্ধতা ছাড়াই ব্যবহার করতে পারেন।'
+    },
+    {
+      question: 'আমি যে টেক্সট স্টাইল করতে চাই তার জন্য কি কোনো অক্ষর সীমা আছে?',
+      answer: 'টেক্সট স্টাইলারের কোনো নির্দিষ্ট অক্ষর সীমা নেই। তবে, মনে রাখবেন যে কিছু প্ল্যাটফর্ম বা অ্যাপ্লিকেশনের নিজস্ব অক্ষর সংখ্যার সীমাবদ্ধতা থাকতে পারে।'
+    },
+    {
+      question: 'আমি কীভাবে নিশ্চিত করতে পারি যে স্টাইল করা টেক্সট সঠিকভাবে প্রদর্শিত হচ্ছে?',
+      answer: 'স্টাইল করা টেক্সট সঠিকভাবে প্রদর্শিত হচ্ছে কিনা তা নিশ্চিত করতে, এটি আপনার পছন্দের প্ল্যাটফর্ম বা ডিভাইসে পরীক্ষা করুন। বেশিরভাগ ক্ষেত্রে, ফন্টগুলি কোনো সমস্যা ছাড়াই প্রদর্শিত হবে।'
+    },
+    {
+      question: 'আমি কি বিভিন্ন ভাষায় টেক্সট স্টাইল করতে টেক্সট স্টাইলার ব্যবহার করতে পারি?',
+      answer: 'হ্যাঁ, টেক্সট স্টাইলার বিভিন্ন ভাষায় টেক্সট সমর্থন করে। শুধু আপনার পছন্দের ভাষায় টেক্সট লিখুন, এবং টেক্সট স্টাইলার সেই অনুযায়ী এটি ফরম্যাট করবে।'
+    }
+  ],
+  technical: [
+    {
+      question: 'বিশেষ অক্ষরগুলি কি সমর্থিত?',
+      answer: 'হ্যাঁ, বেশিরভাগ বিশেষ অক্ষর সমর্থিত। তবে, কিছু জটিল স্টাইলের ক্ষেত্রে সীমাবদ্ধতা থাকতে পারে।'
+    },
+    {
+      question: 'কোনো দৈর্ঘ্য সীমা আছে কি?',
+      answer: 'না, কোনো কঠোর দৈর্ঘ্য সীমা নেই। তবে, খুব দীর্ঘ টেক্সটের জন্য, প্রক্রিয়াকরণে একটু বেশি সময় লাগতে পারে।'
+    }
+  ]
+},
+  ur: {
+  general: [
+    {
+      question: 'ٹیکسٹ سٹائلر کیسے کام کرتا ہے؟',
+      answer: 'اپنا ٹیکسٹ درج کریں اور ایک سٹائل منتخب کریں۔ ٹیکسٹ خود بخود تبدیل ہو جائے گا اور ایک کلک سے کاپی کیا جا سکتا ہے۔'
+    },
+    {
+      question: 'کیا سٹائلز ہر جگہ پڑھنے کے قابل ہیں؟',
+      answer: 'پڑھنے کی قابلیت پلیٹ فارم اور فونٹ سپورٹ کے مطابق مختلف ہو سکتی ہے۔ کچھ سٹائلز ہر جگہ دستیاب نہیں ہو سکتے۔'
+    },
+    {
+      question: 'ٹیکسٹ سٹائلر کیا ہے اور یہ کیسے کام کرتا ہے؟',
+      answer: 'smileys.lol پر ٹیکسٹ سٹائلر ایک ایسا ٹول ہے جو آپ کو عام ٹیکسٹ کو مختلف سٹائل شدہ فونٹس میں تبدیل کرنے کی اجازت دیتا ہے۔ بس اپنا ٹیکسٹ درج کریں، مطلوبہ سٹائل منتخب کریں، اور ٹیکسٹ سٹائلر آپ کے لیے فارمیٹ شدہ ٹیکسٹ تیار کر دے گا۔'
+    },
+    {
+      question: 'میں ٹیکسٹ سٹائلر کے ساتھ کون سے ٹیکسٹ سٹائلز بنا سکتا ہوں (جیسے بولڈ، اٹالک، سجاوٹی)؟',
+      answer: 'ٹیکسٹ سٹائلر مختلف ٹیکسٹ سٹائلز فراہم کرتا ہے، جس میں بولڈ، اٹالک، انڈرلائن، سٹرائک تھرو اور سجاوٹی فونٹس شامل ہیں، جو مختلف مواقع اور پلیٹ فارمز کے لیے موزوں ہیں۔'
+    },
+    {
+      question: 'میں سوشل میڈیا یا پیغامات میں سٹائل شدہ ٹیکسٹ کا استعمال کیسے کر سکتا ہوں؟',
+      answer: 'ٹیکسٹ سٹائلر کے ساتھ اپنے ٹیکسٹ کو فارمیٹ کرنے کے بعد، سٹائل شدہ ٹیکسٹ کو کاپی کریں اور اسے اپنے سوشل میڈیا، پیغامات یا پوسٹس میں پیسٹ کریں۔ زیادہ تر پلیٹ فارمز ان خصوصی فونٹس کی حمایت کرتے ہیں۔'
+    },
+    {
+      question: 'کیا ٹیکسٹ سٹائلر تمام پلیٹ فارمز اور آلات کے ساتھ مطابقت رکھتا ہے؟',
+      answer: 'ٹیکسٹ سٹائلر کے ذریعے تیار کردہ فونٹس زیادہ تر جدید پلیٹ فارمز اور آلات کے ذریعے سپورٹ کیے جاتے ہیں۔ تاہم، نادر صورتوں میں، ڈسپلے میں فرق ہو سکتا ہے۔'
+    },
+    {
+      question: 'کیا میں ٹیکسٹ سٹائلر کو مفت استعمال کر سکتا ہوں؟',
+      answer: 'ہاں، smileys.lol پر ٹیکسٹ سٹائلر ایک مفت ٹول ہے جسے آپ اپنے ٹیکسٹ کے لیے بغیر کسی پابندی کے استعمال کر سکتے ہیں۔'
+    },
+    {
+      question: 'کیا میرے سٹائل کرنے والے ٹیکسٹ کے لیے کوئی حرف کی حد ہے؟',
+      answer: 'ٹیکسٹ سٹائلر کی کوئی مخصوص حرف کی حد نہیں ہے۔ تاہم، نوٹ کریں کہ کچھ پلیٹ فارمز یا ایپلیکیشنز میں حروف کی تعداد پر اپنی حدود ہو سکتی ہیں۔'
+    },
+    {
+      question: 'میں کیسے یقینی بنا سکتا ہوں کہ سٹائل شدہ ٹیکسٹ درست طریقے سے ڈسپلے ہو رہا ہے؟',
+      answer: 'سٹائل شدہ ٹیکسٹ کے درست ڈسپلے کو یقینی بنانے کے لیے، اسے مطلوبہ پلیٹ فارم یا آلے پر ٹیسٹ کریں۔ زیادہ تر معاملات میں، فونٹس بغیر کسی مسئلے کے ڈسپلے ہوں گے۔'
+    },
+    {
+      question: 'کیا میں مختلف زبانوں میں ٹیکسٹ کو سٹائل کرنے کے لیے ٹیکسٹ سٹائلر استعمال کر سکتا ہوں؟',
+      answer: 'ہاں، ٹیکسٹ سٹائلر مختلف زبانوں میں ٹیکسٹ کی حمایت کرتا ہے۔ بس مطلوبہ زبان میں ٹیکسٹ درج کریں، اور ٹیکسٹ سٹائلر اسے اس کے مطابق فارمیٹ کرے گا۔'
+    }
+  ],
+  technical: [
+    {
+      question: 'کیا خصوصی حروف کی حمایت کی جاتی ہے؟',
+      answer: 'ہاں، زیادہ تر خصوصی حروف کی حمایت کی جاتی ہے۔ تاہم، کچھ زیادہ پیچیدہ سٹائلز کے ساتھ محدودیتیں ہو سکتی ہیں۔'
+    },
+    {
+      question: 'کیا کوئی لمبائی کی حد ہے؟',
+      answer: 'نہیں، کوئی سخت لمبائی کی حد نہیں ہے۔ تاہم، بہت لمبے ٹیکسٹ کے لیے، پروسیسنگ میں تھوڑا زیادہ وقت لگ سکتا ہے۔'
+    }
+  ]
+},
+  id: {
+  general: [
+    {
+      question: 'Bagaimana cara kerja Pengubah Gaya Teks?',
+      answer: 'Masukkan teks Anda dan pilih gaya. Teks akan otomatis diubah dan dapat disalin dengan satu klik.'
+    },
+    {
+      question: 'Apakah gaya-gaya tersebut dapat dibaca di mana saja?',
+      answer: 'Keterbacaan dapat bervariasi tergantung pada platform dan dukungan font. Beberapa gaya mungkin tidak tersedia di semua tempat.'
+    },
+    {
+      question: 'Apa itu Pengubah Gaya Teks dan bagaimana cara kerjanya?',
+      answer: 'Pengubah Gaya Teks di smileys.lol adalah alat yang memungkinkan Anda mengubah teks biasa menjadi berbagai font bergaya. Cukup masukkan teks Anda, pilih gaya yang diinginkan, dan Pengubah Gaya Teks akan menghasilkan teks yang diformat untuk Anda.'
+    },
+    {
+      question: 'Gaya teks apa yang dapat saya buat dengan Pengubah Gaya Teks (misalnya tebal, miring, dekoratif)?',
+      answer: 'Pengubah Gaya Teks menawarkan berbagai gaya teks, termasuk tebal, miring, garis bawah, coret, dan font dekoratif, yang cocok untuk berbagai kesempatan dan platform.'
+    },
+    {
+      question: 'Bagaimana cara menggunakan teks bergaya di media sosial atau pesan?',
+      answer: 'Setelah memformat teks Anda dengan Pengubah Gaya Teks, salin teks bergaya dan tempelkan ke media sosial, pesan, atau postingan Anda. Sebagian besar platform mendukung font khusus ini.'
+    },
+    {
+      question: 'Apakah Pengubah Gaya Teks kompatibel dengan semua platform dan perangkat?',
+      answer: 'Font yang dihasilkan oleh Pengubah Gaya Teks didukung oleh sebagian besar platform dan perangkat modern. Namun, dalam kasus yang jarang terjadi, mungkin ada perbedaan dalam tampilan.'
+    },
+    {
+      question: 'Bisakah saya menggunakan Pengubah Gaya Teks secara gratis?',
+      answer: 'Ya, Pengubah Gaya Teks di smileys.lol adalah alat gratis yang dapat Anda gunakan tanpa batasan untuk teks Anda.'
+    },
+    {
+      question: 'Apakah ada batasan karakter untuk teks yang ingin saya ubah gayanya?',
+      answer: 'Pengubah Gaya Teks tidak memiliki batasan karakter tertentu. Namun, perlu diingat bahwa beberapa platform atau aplikasi mungkin memiliki batasan sendiri pada jumlah karakter.'
+    },
+    {
+      question: 'Bagaimana cara memastikan teks bergaya ditampilkan dengan benar?',
+      answer: 'Untuk memastikan teks bergaya ditampilkan dengan benar, uji di platform atau perangkat yang diinginkan. Dalam kebanyakan kasus, font akan ditampilkan tanpa masalah.'
+    },
+    {
+      question: 'Bisakah saya menggunakan Pengubah Gaya Teks untuk mengubah gaya teks dalam berbagai bahasa?',
+      answer: 'Ya, Pengubah Gaya Teks mendukung teks dalam berbagai bahasa. Cukup masukkan teks yang diinginkan dalam bahasa yang sesuai, dan Pengubah Gaya Teks akan memformatnya sesuai.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Apakah karakter khusus didukung?',
+      answer: 'Ya, sebagian besar karakter khusus didukung. Namun, mungkin ada batasan dengan beberapa gaya yang lebih kompleks.'
+    },
+    {
+      question: 'Apakah ada batasan panjang?',
+      answer: 'Tidak, tidak ada batasan panjang yang ketat. Namun, untuk teks yang sangat panjang, pemrosesan mungkin memerlukan waktu sedikit lebih lama.'
+    }
+  ]
+},
+  pcm: {
+  general: [
+    {
+      question: 'How di Text Styler dey work?',
+      answer: 'Just put your text and choose style. Di text go change by imself and you fit copy am with one click.'
+    },
+    {
+      question: 'Dem fit read di styles for everywhere?',
+      answer: 'How dem fit read am fit change based on di platform and font support. Some styles fit no dey available for everywhere.'
+    },
+    {
+      question: 'Wetin be Text Styler and how e dey work?',
+      answer: 'Text Styler for smileys.lol na tool wey dey allow you change normal text to different stylish fonts. Just put your text, choose di style you want, and di Text Styler go create di formatted text for you.'
+    },
+    {
+      question: 'Which kain text styles I fit create with di Text Styler (like bold, italic, fancy)?',
+      answer: 'Text Styler dey give different text styles, including bold, italic, underline, strike-through and fancy fonts, wey fit different occasions and platforms.'
+    },
+    {
+      question: 'How I fit use di styled text for social media or messages?',
+      answer: 'After you don format your text with di Text Styler, copy di styled text and paste am for your social media, messages or posts. Most platforms dey support these special fonts.'
+    },
+    {
+      question: 'Text Styler dey work with all platforms and devices?',
+      answer: 'Di fonts wey Text Styler dey create dey supported by most modern platforms and devices. But, for some rare cases, e fit get small differences for how e dey show.'
+    },
+    {
+      question: 'I fit use di Text Styler for free?',
+      answer: 'Yes, Text Styler for smileys.lol na free tool wey you fit use without any limits for your texts.'
+    },
+    {
+      question: 'E get any character limit for di text wey I wan style?',
+      answer: 'Text Styler no get any specific character limit. But, make you remember say some platforms or apps fit get dia own limits on how many characters you fit use.'
+    },
+    {
+      question: 'How I go make sure say di styled text dey show well?',
+      answer: 'To make sure say di styled text dey show well, test am for di platform or device wey you wan use. For most cases, di fonts go show without any wahala.'
+    },
+    {
+      question: 'I fit use di Text Styler to style text for different languages?',
+      answer: 'Yes, Text Styler dey support text for different languages. Just put di text you want for di language you want, and di Text Styler go format am like dat.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Dem dey support special characters?',
+      answer: 'Yes, dem dey support most special characters. But, e fit get some limits with some styles wey dey more complex.'
+    },
+    {
+      question: 'E get any length limit?',
+      answer: 'No, e no get any strict length limit. But, for text wey long well-well, e fit take small more time to process am.'
+    }
+  ]
+},
+  mr: {
+  general: [
+    {
+      question: 'टेक्स्ट स्टाइलर कसा कार्य करतो?',
+      answer: 'तुमचा मजकूर टाका आणि एक शैली निवडा. मजकूर स्वयंचलितपणे बदलेल आणि एका क्लिकवर कॉपी केला जाऊ शकतो.'
+    },
+    {
+      question: 'शैली सर्वत्र वाचनीय आहेत का?',
+      answer: 'वाचनीयता प्लॅटफॉर्म आणि फॉन्ट समर्थनानुसार बदलू शकते. काही शैली सर्वत्र उपलब्ध नसू शकतात.'
+    },
+    {
+      question: 'टेक्स्ट स्टाइलर काय आहे आणि तो कसा कार्य करतो?',
+      answer: 'smileys.lol वरील टेक्स्ट स्टाइलर हे एक साधन आहे जे तुम्हाला सामान्य मजकूर विविध स्टाइलिश फॉन्ट्समध्ये रूपांतरित करण्याची परवानगी देते. केवळ तुमचा मजकूर टाका, इच्छित शैली निवडा, आणि टेक्स्ट स्टाइलर तुमच्यासाठी फॉरमॅट केलेला मजकूर तयार करेल.'
+    },
+    {
+      question: 'मी टेक्स्ट स्टाइलरसह कोणत्या मजकूर शैली तयार करू शकतो (उदा. ठळक, तिरपा, सजावटी)?',
+      answer: 'टेक्स्ट स्टाइलर विविध मजकूर शैली प्रदान करतो, ज्यामध्ये ठळक, तिरपा, अधोरेखित, स्ट्राइकथ्रू आणि सजावटी फॉन्ट्स समाविष्ट आहेत, जे विविध प्रसंग आणि प्लॅटफॉर्मसाठी योग्य आहेत.'
+    },
+    {
+      question: 'मी स्टाइल केलेला मजकूर सोशल मीडिया किंवा संदेशांमध्ये कसा वापरू शकतो?',
+      answer: 'टेक्स्ट स्टाइलरसह तुमचा मजकूर फॉरमॅट केल्यानंतर, स्टाइल केलेला मजकूर कॉपी करा आणि तो तुमच्या सोशल मीडिया, संदेश किंवा पोस्टमध्ये पेस्ट करा. बहुतेक प्लॅटफॉर्म या विशेष फॉन्टचे समर्थन करतात.'
+    },
+    {
+      question: 'टेक्स्ट स्टाइलर सर्व प्लॅटफॉर्म आणि डिव्हाइसेससह सुसंगत आहे का?',
+      answer: 'टेक्स्ट स्टाइलरद्वारे तयार केलेले फॉन्ट बहुतेक आधुनिक प्लॅटफॉर्म आणि डिव्हाइसेसद्वारे समर्थित आहेत. तथापि, दुर्मिळ प्रकरणांमध्ये, प्रदर्शनात फरक असू शकतो.'
+    },
+    {
+      question: 'मी टेक्स्ट स्टाइलर विनामूल्य वापरू शकतो का?',
+      answer: 'होय, smileys.lol वरील टेक्स्ट स्टाइलर हे एक मोफत साधन आहे जे तुम्ही तुमच्या मजकुरासाठी कोणत्याही मर्यादेशिवाय वापरू शकता.'
+    },
+    {
+      question: 'मला स्टाइल करायच्या मजकुरासाठी कोणतीही अक्षर मर्यादा आहे का?',
+      answer: 'टेक्स्ट स्टाइलरची कोणतीही विशिष्ट अक्षर मर्यादा नाही. तथापि, लक्षात ठेवा की काही प्लॅटफॉर्म किंवा अॅप्लिकेशन्सची अक्षरांच्या संख्येवर स्वतःची मर्यादा असू शकते.'
+    },
+    {
+      question: 'स्टाइल केलेला मजकूर योग्यरित्या प्रदर्शित होत आहे याची मी कशी खात्री करू शकतो?',
+      answer: 'स्टाइल केलेला मजकूर योग्यरित्या प्रदर्शित होत आहे याची खात्री करण्यासाठी, त्याची इच्छित प्लॅटफॉर्म किंवा डिव्हाइसवर चाचणी करा. बहुतेक प्रकरणांमध्ये, फॉन्ट कोणत्याही समस्येशिवाय प्रदर्शित होतील.'
+    },
+    {
+      question: 'मी विविध भाषांमधील मजकूर स्टाइल करण्यासाठी टेक्स्ट स्टाइलर वापरू शकतो का?',
+      answer: 'होय, टेक्स्ट स्टाइलर विविध भाषांमधील मजकुराचे समर्थन करतो. फक्त इच्छित भाषेत मजकूर टाका, आणि टेक्स्ट स्टाइलर त्यानुसार त्याचे फॉरमॅटिंग करेल.'
+    }
+  ],
+  technical: [
+    {
+      question: 'विशेष वर्णांना समर्थन आहे का?',
+      answer: 'होय, बहुतेक विशेष वर्णांना समर्थन आहे. तथापि, काही अधिक गुंतागुंतीच्या शैलींसह मर्यादा असू शकतात.'
+    },
+    {
+      question: 'कोणतीही लांबी मर्यादा आहे का?',
+      answer: 'नाही, कोणतीही कठोर लांबी मर्यादा नाही. तथापि, खूप लांब मजकुरासाठी, प्रक्रिया करण्यास थोडा जास्त वेळ लागू शकतो.'
+    }
+  ]
+},
+  te: {
+  general: [
+    {
+      question: 'టెక్స్ట్ స్టైలర్ ఎలా పని చేస్తుంది?',
+      answer: 'మీ టెక్స్ట్‌ను నమోదు చేసి ఒక శైలిని ఎంచుకోండి. టెక్స్ట్ స్వయంచాలకంగా మార్చబడుతుంది మరియు ఒక క్లిక్‌తో కాపీ చేయబడుతుంది.'
+    },
+    {
+      question: 'శైలులు అన్నిచోట్లా చదవగలిగేవిగా ఉన్నాయా?',
+      answer: 'చదవగలిగే తన్నం ప్లాట్‌ఫారమ్ మరియు ఫాంట్ మద్దతు ఆధారంగా మారవచ్చు. కొన్ని శైలులు అన్నిచోట్లా అందుబాటులో ఉండకపోవచ్చు.'
+    },
+    {
+      question: 'టెక్స్ట్ స్టైలర్ అంటే ఏమిటి మరియు అది ఎలా పని చేస్తుంది?',
+      answer: 'smileys.lol లోని టెక్స్ట్ స్టైలర్ అనేది సాధారణ టెక్స్ట్‌ను వివిధ శైలీకృత ఫాంట్‌లలోకి మార్చడానికి అనుమతించే ఒక సాధనం. మీ టెక్స్ట్‌ను నమోదు చేయండి, కావలసిన శైలిని ఎంచుకోండి, మరియు టెక్స్ట్ స్టైలర్ మీ కోసం ఫార్మాట్ చేసిన టెక్స్ట్‌ను రూపొందిస్తుంది.'
+    },
+    {
+      question: 'నేను టెక్స్ట్ స్టైలర్‌తో ఏ రకమైన టెక్స్ట్ శైలులను సృష్టించగలను (ఉదా. బోల్డ్, ఇటాలిక్, అలంకారిక)?',
+      answer: 'టెక్స్ట్ స్టైలర్ వివిధ టెక్స్ట్ శైలులను అందిస్తుంది, వీటిలో బోల్డ్, ఇటాలిక్, అండర్‌లైన్, స్ట్రైక్‌థ్రూ మరియు అలంకారిక ఫాంట్‌లు ఉన్నాయి, ఇవి వివిధ సందర్భాలు మరియు ప్లాట్‌ఫారమ్‌లకు సరిపోతాయి.'
+    },
+    {
+      question: 'నేను శైలీకృత టెక్స్ట్‌ను సోషల్ మీడియా లేదా సందేశాలలో ఎలా ఉపయోగించగలను?',
+      answer: 'టెక్స్ట్ స్టైలర్‌తో మీ టెక్స్ట్‌ను ఫార్మాట్ చేసిన తర్వాత, శైలీకృత టెక్స్ట్‌ను కాపీ చేసి మీ సోషల్ మీడియా, సందేశాలు లేదా పోస్ట్‌లలో పేస్ట్ చేయండి. చాలా ప్లాట్‌ఫారమ్‌లు ఈ ప్రత్యేక ఫాంట్‌లను సమర్థిస్తాయి.'
+    },
+    {
+      question: 'టెక్స్ట్ స్టైలర్ అన్ని ప్లాట్‌ఫారమ్‌లు మరియు పరికరాలతో అనుకూలంగా ఉందా?',
+      answer: 'టెక్స్ట్ స్టైలర్ ద్వారా రూపొందించబడిన ఫాంట్‌లు చాలా ఆధునిక ప్లాట్‌ఫారమ్‌లు మరియు పరికరాల ద్వారా సమర్థించబడతాయి. అయినప్పటికీ, అరుదైన సందర్భాలలో, ప్రదర్శనలో తేడాలు ఉండవచ్చు.'
+    },
+    {
+      question: 'నేను టెక్స్ట్ స్టైలర్‌ను ఉచితంగా ఉపయోగించుకోవచ్చా?',
+      answer: 'అవును, smileys.lol లోని టెక్స్ట్ స్టైలర్ ఒక ఉచిత సాధనం, దీనిని మీరు మీ టెక్స్ట్‌ల కోసం ఎలాంటి పరిమితులు లేకుండా ఉపయోగించుకోవచ్చు.'
+    },
+    {
+      question: 'నేను శైలీకరించదలచిన టెక్స్ట్‌కు ఏదైనా అక్షర పరిమితి ఉందా?',
+      answer: 'టెక్స్ట్ స్టైలర్‌కు నిర్దిష్ట అక్షర పరిమితి లేదు. అయినప్పటికీ, కొన్ని ప్లాట్‌ఫారమ్‌లు లేదా అప్లికేషన్‌లు అక్షరాల సంఖ్యపై తమ స్వంత పరిమితులను కలిగి ఉండవచ్చని గమనించండి.'
+    },
+    {
+      question: 'శైలీకృత టెక్స్ట్ సరిగ్గా ప్రదర్శించబడుతుందని నేను ఎలా నిర్ధారించుకోగలను?',
+      answer: 'శైలీకృత టెక్స్ట్ సరిగ్గా ప్రదర్శించబడుతుందని నిర్ధారించుకోవడానికి, దానిని కోరుకున్న ప్లాట్‌ఫారమ్ లేదా పరికరంలో పరీక్షించండి. చాలా సందర్భాలలో, ఫాంట్‌లు ఎలాంటి సమస్య లేకుండా ప్రదర్శించబడతాయి.'
+    },
+    {
+      question: 'నేను వివిధ భాషలలో టెక్స్ట్‌ను శైలీకరించడానికి టెక్స్ట్ స్టైలర్‌ను ఉపయోగించగలనా?',
+      answer: 'అవును, టెక్స్ట్ స్టైలర్ వివిధ భాషలలో టెక్స్ట్‌ను సమర్థిస్తుంది. సంబంధిత భాషలో కావలసిన టెక్స్ట్‌ను నమోదు చేయండి, మరియు టెక్స్ట్ స్టైలర్ దానిని తదనుగుణంగా ఫార్మాట్ చేస్తుంది.'
+    }
+  ],
+  technical: [
+    {
+      question: 'ప్రత్యేక అక్షరాలకు మద్దతు ఉందా?',
+      answer: 'అవును, చాలా ప్రత్యేక అక్షరాలకు మద్దతు ఉంది. అయినప్పటికీ, కొన్ని మరింత సంక్లిష్టమైన శైలులతో పరిమితులు ఉండవచ్చు.'
+    },
+    {
+      question: 'ఏదైనా పొడవు పరిమితి ఉందా?',
+      answer: 'లేదు, ఖచ్చితమైన పొడవు పరిమితి లేదు. అయినప్పటికీ, చాలా పొడవైన టెక్స్ట్‌ల కోసం, ప్రాసెసింగ్ కొంచెం ఎక్కువ సమయం పట్టవచ్చు.'
+    }
+  ]
+},
+  tr: {
+  general: [
+    {
+      question: 'Metin Stilcisi nasıl çalışır?',
+      answer: 'Metninizi girin ve bir stil seçin. Metin otomatik olarak dönüştürülecek ve tek tıklamayla kopyalanabilecektir.'
+    },
+    {
+      question: 'Stiller her yerde okunabilir mi?',
+      answer: 'Okunabilirlik platform ve yazı tipi desteğine bağlı olarak değişebilir. Bazı stiller her yerde mevcut olmayabilir.'
+    },
+    {
+      question: 'Metin Stilcisi nedir ve nasıl çalışır?',
+      answer: 'smileys.lol\'daki Metin Stilcisi, normal metni çeşitli stilize yazı tiplerine dönüştürmenize olanak tanıyan bir araçtır. Sadece metninizi girin, istediğiniz stili seçin ve Metin Stilcisi sizin için biçimlendirilmiş metni oluşturacaktır.'
+    },
+    {
+      question: 'Metin Stilcisi ile hangi metin stillerini oluşturabilirim (örneğin kalın, italik, süslü)?',
+      answer: 'Metin Stilcisi, kalın, italik, altı çizili, üstü çizili ve süslü yazı tipleri dahil olmak üzere çeşitli metin stilleri sunar, bunlar farklı durumlar ve platformlar için uygundur.'
+    },
+    {
+      question: 'Stilize edilmiş metni sosyal medyada veya mesajlarda nasıl kullanabilirim?',
+      answer: 'Metninizi Metin Stilcisi ile biçimlendirdikten sonra, stilize edilmiş metni kopyalayın ve sosyal medyanıza, mesajlarınıza veya gönderilerinize yapıştırın. Çoğu platform bu özel yazı tiplerini destekler.'
+    },
+    {
+      question: 'Metin Stilcisi tüm platformlar ve cihazlarla uyumlu mu?',
+      answer: 'Metin Stilcisi tarafından oluşturulan yazı tipleri çoğu modern platform ve cihaz tarafından desteklenir. Ancak, nadir durumlarda görüntülemede farklılıklar olabilir.'
+    },
+    {
+      question: 'Metin Stilcisini ücretsiz kullanabilir miyim?',
+      answer: 'Evet, smileys.lol\'daki Metin Stilcisi, metinleriniz için herhangi bir kısıtlama olmaksızın kullanabileceğiniz ücretsiz bir araçtır.'
+    },
+    {
+      question: 'Stilize etmek istediğim metin için herhangi bir karakter sınırı var mı?',
+      answer: 'Metin Stilcisinin belirli bir karakter sınırı yoktur. Ancak, bazı platformların veya uygulamaların karakter sayısı üzerinde kendi sınırlamaları olabileceğini unutmayın.'
+    },
+    {
+      question: 'Stilize edilmiş metnin doğru görüntülendiğinden nasıl emin olabilirim?',
+      answer: 'Stilize edilmiş metnin doğru görüntülendiğinden emin olmak için, istenen platform veya cihazda test edin. Çoğu durumda, yazı tipleri sorunsuz bir şekilde görüntülenecektir.'
+    },
+    {
+      question: 'Farklı dillerdeki metinleri stilize etmek için Metin Stilcisini kullanabilir miyim?',
+      answer: 'Evet, Metin Stilcisi farklı dillerdeki metinleri destekler. Sadece istediğiniz dilde metni girin ve Metin Stilcisi buna göre biçimlendirecektir.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Özel karakterler destekleniyor mu?',
+      answer: 'Evet, çoğu özel karakter desteklenir. Ancak, bazı daha karmaşık stillerle sınırlamalar olabilir.'
+    },
+    {
+      question: 'Herhangi bir uzunluk sınırı var mı?',
+      answer: 'Hayır, katı bir uzunluk sınırı yoktur. Ancak, çok uzun metinler için işlem biraz daha uzun sürebilir.'
+    }
+  ]
+},
+  ta: {
+  general: [
+    {
+      question: 'உரை வடிவமைப்பாளர் எவ்வாறு செயல்படுகிறது?',
+      answer: 'உங்கள் உரையை உள்ளிடவும் மற்றும் ஒரு பாணியைத் தேர்வு செய்யவும். உரை தானாகவே மாற்றப்படும் மற்றும் ஒரு கிளிக்கில் நகலெடுக்கப்படலாம்.'
+    },
+    {
+      question: 'பாணிகள் எல்லா இடங்களிலும் படிக்கக்கூடியதாக இருக்குமா?',
+      answer: 'படிக்கும் திறன் தளம் மற்றும் எழுத்துரு ஆதரவைப் பொறுத்து மாறுபடலாம். சில பாணிகள் எல்லா இடங்களிலும் கிடைக்காமல் போகலாம்.'
+    },
+    {
+      question: 'உரை வடிவமைப்பாளர் என்றால் என்ன மற்றும் அது எவ்வாறு செயல்படுகிறது?',
+      answer: 'smileys.lol இல் உள்ள உரை வடிவமைப்பாளர் என்பது சாதாரண உரையை பல்வேறு வடிவமைக்கப்பட்ட எழுத்துருக்களாக மாற்ற அனுமதிக்கும் ஒரு கருவியாகும். உங்கள் உரையை உள்ளிடவும், விரும்பிய பாணியைத் தேர்வு செய்யவும், உரை வடிவமைப்பாளர் உங்களுக்காக வடிவமைக்கப்பட்ட உரையை உருவாக்கும்.'
+    },
+    {
+      question: 'உரை வடிவமைப்பாளருடன் எந்த உரை பாணிகளை உருவாக்க முடியும் (எ.கா. தடித்த, சாய்வு, அலங்கார)?',
+      answer: 'உரை வடிவமைப்பாளர் தடித்த, சாய்வு, அடிக்கோடிட்ட, குறுக்குக்கோடு மற்றும் அலங்கார எழுத்துருக்கள் உட்பட பல்வேறு உரை பாணிகளை வழங்குகிறது, இவை பல்வேறு சந்தர்ப்பங்கள் மற்றும் தளங்களுக்கு ஏற்றவை.'
+    },
+    {
+      question: 'வடிவமைக்கப்பட்ட உரையை சமூக ஊடகங்களில் அல்லது செய்திகளில் எவ்வாறு பயன்படுத்துவது?',
+      answer: 'உரை வடிவமைப்பாளருடன் உங்கள் உரையை வடிவமைத்த பிறகு, வடிவமைக்கப்பட்ட உரையை நகலெடுத்து உங்கள் சமூக ஊடகங்கள், செய்திகள் அல்லது இடுகைகளில் ஒட்டவும். பெரும்பாலான தளங்கள் இந்த சிறப்பு எழுத்துருக்களை ஆதரிக்கின்றன.'
+    },
+    {
+      question: 'உரை வடிவமைப்பாளர் அனைத்து தளங்கள் மற்றும் சாதனங்களுடன் இணக்கமானதா?',
+      answer: 'உரை வடிவமைப்பாளரால் உருவாக்கப்பட்ட எழுத்துருக்கள் பெரும்பாலான நவீன தளங்கள் மற்றும் சாதனங்களால் ஆதரிக்கப்படுகின்றன. எனினும், அரிதான சந்தர்ப்பங்களில், காட்சியில் வேறுபாடுகள் இருக்கலாம்.'
+    },
+    {
+      question: 'உரை வடிவமைப்பாளரை இலவசமாகப் பயன்படுத்த முடியுமா?',
+      answer: 'ஆம், smileys.lol இல் உள்ள உரை வடிவமைப்பாளர் ஒரு இலவச கருவியாகும், இதை உங்கள் உரைகளுக்கு எந்த கட்டுப்பாடும் இல்லாமல் பயன்படுத்தலாம்.'
+    },
+    {
+      question: 'நான் வடிவமைக்க விரும்பும் உரைக்கு ஏதேனும் எழுத்து வரம்பு உள்ளதா?',
+      answer: 'உரை வடிவமைப்பாளருக்கு குறிப்பிட்ட எழுத்து வரம்பு இல்லை. எனினும், சில தளங்கள் அல்லது பயன்பாடுகள் எழுத்துக்களின் எண்ணிக்கையில் தங்கள் சொந்த வரம்புகளைக் கொண்டிருக்கலாம் என்பதை நினைவில் கொள்ளுங்கள்.'
+    },
+    {
+      question: 'வடிவமைக்கப்பட்ட உரை சரியாகக் காட்டப்படுவதை எவ்வாறு உறுதி செய்வது?',
+      answer: 'வடிவமைக்கப்பட்ட உரை சரியாகக் காட்டப்படுவதை உறுதி செய்ய, அதை விரும்பிய தளம் அல்லது சாதனத்தில் சோதிக்கவும். பெரும்பாலான சந்தர்ப்பங்களில், எழுத்துருக்கள் எந்த சிக்கலும் இல்லாமல் காட்டப்படும்.'
+    },
+    {
+      question: 'வெவ்வேறு மொழிகளில் உரையை வடிவமைக்க உரை வடிவமைப்பாளரைப் பயன்படுத்த முடியுமா?',
+      answer: 'ஆம், உரை வடிவமைப்பாளர் வெவ்வேறு மொழிகளில் உரையை ஆதரிக்கிறது. விரும்பிய மொழியில் உரையை உள்ளிடவும், உரை வடிவமைப்பாளர் அதற்கேற்ப வடிவமைக்கும்.'
+    }
+  ],
+  technical: [
+    {
+      question: 'சிறப்பு எழுத்துக்கள் ஆதரிக்கப்படுகின்றனவா?',
+      answer: 'ஆம், பெரும்பாலான சிறப்பு எழுத்துக்கள் ஆதரிக்கப்படுகின்றன. எனினும், சில சிக்கலான பாணிகளுடன் வரம்புகள் இருக்கலாம்.'
+    },
+    {
+      question: 'ஏதேனும் நீள வரம்பு உள்ளதா?',
+      answer: 'இல்லை, கடுமையான நீள வரம்பு இல்லை. எனினும், மிக நீண்ட உரைகளுக்கு, செயலாக்கம் சற்று அதிக நேரம் எடுக்கலாம்.'
+    }
+  ]
+},
+  vi: {
+  general: [
+    {
+      question: 'Công cụ tạo kiểu chữ hoạt động như thế nào?',
+      answer: 'Nhập văn bản của bạn và chọn một kiểu. Văn bản sẽ tự động được chuyển đổi và có thể được sao chép bằng một cú nhấp chuột.'
+    },
+    {
+      question: 'Các kiểu chữ có thể đọc được ở mọi nơi không?',
+      answer: 'Khả năng đọc có thể thay đổi tùy thuộc vào nền tảng và hỗ trợ phông chữ. Một số kiểu có thể không có sẵn ở mọi nơi.'
+    },
+    {
+      question: 'Công cụ tạo kiểu chữ là gì và nó hoạt động như thế nào?',
+      answer: 'Công cụ tạo kiểu chữ trên smileys.lol là một công cụ cho phép bạn chuyển đổi văn bản thông thường thành các phông chữ được tạo kiểu khác nhau. Chỉ cần nhập văn bản của bạn, chọn kiểu mong muốn, và Công cụ tạo kiểu chữ sẽ tạo ra văn bản được định dạng cho bạn.'
+    },
+    {
+      question: 'Tôi có thể tạo những kiểu chữ nào với Công cụ tạo kiểu chữ (ví dụ: đậm, nghiêng, trang trí)?',
+      answer: 'Công cụ tạo kiểu chữ cung cấp nhiều kiểu chữ khác nhau, bao gồm đậm, nghiêng, gạch chân, gạch ngang và phông chữ trang trí, phù hợp cho các dịp và nền tảng khác nhau.'
+    },
+    {
+      question: 'Làm thế nào để tôi sử dụng văn bản đã được tạo kiểu trong mạng xã hội hoặc tin nhắn?',
+      answer: 'Sau khi định dạng văn bản của bạn với Công cụ tạo kiểu chữ, hãy sao chép văn bản đã được tạo kiểu và dán nó vào mạng xã hội, tin nhắn hoặc bài đăng của bạn. Hầu hết các nền tảng đều hỗ trợ những phông chữ đặc biệt này.'
+    },
+    {
+      question: 'Công cụ tạo kiểu chữ có tương thích với tất cả các nền tảng và thiết bị không?',
+      answer: 'Các phông chữ được tạo ra bởi Công cụ tạo kiểu chữ được hỗ trợ bởi hầu hết các nền tảng và thiết bị hiện đại. Tuy nhiên, trong một số trường hợp hiếm gặp, có thể có sự khác biệt trong hiển thị.'
+    },
+    {
+      question: 'Tôi có thể sử dụng Công cụ tạo kiểu chữ miễn phí không?',
+      answer: 'Có, Công cụ tạo kiểu chữ trên smileys.lol là một công cụ miễn phí mà bạn có thể sử dụng không giới hạn cho văn bản của mình.'
+    },
+    {
+      question: 'Có giới hạn ký tự cho văn bản tôi muốn tạo kiểu không?',
+      answer: 'Công cụ tạo kiểu chữ không có giới hạn ký tự cụ thể. Tuy nhiên, lưu ý rằng một số nền tảng hoặc ứng dụng có thể có giới hạn riêng về số lượng ký tự.'
+    },
+    {
+      question: 'Làm thế nào để đảm bảo văn bản đã được tạo kiểu hiển thị chính xác?',
+      answer: 'Để đảm bảo văn bản đã được tạo kiểu hiển thị chính xác, hãy kiểm tra nó trên nền tảng hoặc thiết bị mong muốn. Trong hầu hết các trường hợp, phông chữ sẽ hiển thị mà không gặp vấn đề gì.'
+    },
+    {
+      question: 'Tôi có thể sử dụng Công cụ tạo kiểu chữ để tạo kiểu cho văn bản bằng các ngôn ngữ khác nhau không?',
+      answer: 'Có, Công cụ tạo kiểu chữ hỗ trợ văn bản bằng các ngôn ngữ khác nhau. Chỉ cần nhập văn bản mong muốn bằng ngôn ngữ tương ứng, và Công cụ tạo kiểu chữ sẽ định dạng nó cho phù hợp.'
+    }
+  ],
+  technical: [
+    {
+      question: 'Các ký tự đặc biệt có được hỗ trợ không?',
+      answer: 'Có, hầu hết các ký tự đặc biệt đều được hỗ trợ. Tuy nhiên, có thể có hạn chế với một số kiểu phức tạp hơn.'
+    },
+    {
+      question: 'Có giới hạn độ dài không?',
+      answer: 'Không, không có giới hạn độ dài nghiêm ngặt. Tuy nhiên, đối với văn bản rất dài, việc xử lý có thể mất nhiều thời gian hơn một chút.'
+    }
+  ]
+}
+};
