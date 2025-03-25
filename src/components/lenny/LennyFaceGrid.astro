@@ -1,0 +1,41 @@
+---
+    import type { LennyFace } from '../../data/lennyFaces';
+    import { getLennyFaceTranslation } from '../../i18n/translations/lenny-faces';
+    import type { LanguageCode } from '../../i18n/constants';
+
+    interface Props {
+      faces: LennyFace[];
+      language: string;
+    }
+
+    const { faces, language } = Astro.props;
+    ---
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
+      {faces.map((face) => (
+        <button
+          class="lenny-face-item p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-col items-center justify-center gap-2"
+          data-face={face.face}
+          data-type="text"
+        >
+          <span class="text-base text-gray-600 font-mono">{face.face}</span>
+          <span class="text-sm text-gray-600 text-center">
+            {getLennyFaceTranslation(face.name, language as LanguageCode)}
+          </span>
+        </button>
+      ))}
+    </div>
+
+    <script>
+      import { copyToClipboard } from '../../utils/clipboard';
+
+      document.querySelectorAll('.lenny-face-item').forEach(button => {
+        button.addEventListener('click', () => {
+          const face = button.getAttribute('data-face');
+          const type = button.getAttribute('data-type') as 'emoji' | 'text';
+          if (face) {
+            copyToClipboard(face, type);
+          }
+        });
+      });
+    </script>
