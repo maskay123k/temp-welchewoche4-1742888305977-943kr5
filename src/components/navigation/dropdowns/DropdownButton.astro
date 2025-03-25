@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  expanded?: boolean;
+}
+
+const { label, expanded = false } = Astro.props;
+---
+
+<button
+  type="button"
+  class="dropdown-button inline-flex items-center px-3 py-2 rounded-md text-sm hover:bg-[var(--color-bg-offset)] transition-colors"
+  aria-expanded={expanded}
+  aria-label={label}
+>
+  <slot />
+</button>
