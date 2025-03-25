@@ -1,0 +1,17 @@
+import type { StyleDefinition } from '../types';
+
+const doubleBudMap: Record<string, string> = {
+  A: 'Aཽ', B: 'Bཽ', C: 'Cཽ', D: 'Dཽ', E: 'Eཽ', F: 'Fཽ', G: 'Gཽ', H: 'Hཽ',
+  I: 'Iཽ', J: 'Jཽ', K: 'Kཽ', L: 'Lཽ', M: 'Mཽ', N: 'Nཽ', O: 'Oཽ', P: 'Pཽ',
+  Q: 'Qཽ', R: 'Rཽ', S: 'Sཽ', T: 'Tཽ', U: 'Uཽ', V: 'Vཽ', W: 'Wཽ', X: 'Xཽ',
+  Y: 'Yཽ', Z: 'Zཽ', a: 'aཽ', b: 'bཽ', c: 'cཽ', d: 'dཽ', e: 'eཽ', f: 'fཽ',
+  g: 'gཽ', h: 'hཽ', i: 'iཽ', j: 'jཽ', k: 'kཽ', l: 'lཽ', m: 'mཽ', n: 'nཽ',
+  o: 'oཽ', p: 'pཽ', q: 'qཽ', r: 'rཽ', s: 'sཽ', t: 'tཽ', u: 'uཽ', v: 'vཽ',
+  w: 'wཽ', x: 'xཽ', y: 'yཽ', z: 'zཽ', 'Ä': 'Äཽཽ', 'Ö': 'Öཽཽ', 'Ü': 'Üཽཽ',
+  'ä': 'äཽཽ', 'ö': 'öཽཽ', 'ü': 'üཽཽ', 'ß': 'ßཽ'
+};
+
+export const doubleBudStyle: StyleDefinition = {
+  name: 'Double Bud',
+  transform: (text: string) => text.split('').map(char => doubleBudMap[char] || char).join('')
+};
