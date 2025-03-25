@@ -1,0 +1,29 @@
+---
+    import type { EmojiCategory } from '../data/types';
+    import { translations } from '../i18n/translations';
+
+    interface Props {
+      categories: EmojiCategory[];
+      activeCategory: string;
+      language: string;
+    }
+
+    const { categories, activeCategory, language } = Astro.props;
+    const t = translations[language as keyof typeof translations] || translations.de || {};
+    ---
+
+    <div class="flex flex-wrap gap-2 mb-8">
+      {categories.map((category) => (
+        <a
+          href={`#${category.name}`}
+          class:list={[
+            'px-4 py-2 rounded-full transition-colors duration-200',
+            activeCategory === category.name
+              ? 'bg-purple-600 text-white'
+              : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+          ]}
+        >
+          {t.categories[category.name]}
+        </a>
+      ))}
+    </div>
