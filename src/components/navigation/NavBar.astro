@@ -1,0 +1,66 @@
+---
+    import { translations } from '../../i18n/translations';
+    import type { LanguageCode } from '../../i18n/constants';
+    import { getMenuItems } from './config/menuItems';
+    import DesktopNav from './desktop/DesktopNav.astro';
+    import MobileNav from './mobile/MobileNav.astro';
+    import ThemeToggle from '../ThemeToggle.astro';
+    import LanguageSelector from '../language/LanguageSelector.astro';
+    import SearchButton from '../search/SearchButton.astro';
+    import SearchDialog from '../search/SearchDialog.astro';
+
+    interface Props {
+      language: string;
+    }
+
+    const { language } = Astro.props;
+    const t = translations[language as LanguageCode];
+    const menuItems = getMenuItems(language);
+    ---
+
+    <nav class="sticky top-0 z-50 bg-[var(--color-bg-base)] border-b border-[var(--color-border)] shadow-sm backdrop-blur supports-[backdrop-filter]:bg-[var(--color-bg-base)]/80">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo/Home -->
+          <a href={`/${language}`} class="flex items-center space-x-2 text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] transition-colors">
+            <span class="text-2xl">🗓</span>
+            <span class="font-semibold hidden sm:block">welche-woche.de</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <DesktopNav menuItems={menuItems} language={language} />
+
+          <!-- Right Side Controls -->
+          <div class="flex items-center space-x-4">
+            <SearchButton language={language} />
+            <ThemeToggle />
+            <div class="h-6 w-px bg-[var(--color-border)]"></div>
+            <LanguageSelector />
+            
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobile-menu-button"
+              class="md:hidden p-2 rounded-lg hover:bg-[var(--color-bg-offset)] transition-colors"
+              aria-label="Toggle mobile menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <MobileNav menuItems={menuItems} language={language} />
+      
+      <!-- Search Dialog -->
+      <SearchDialog language={language} />
+    </nav>
+
+    <script>
+      import { setupMobileMenu } from '../../utils/mobileMenu';
+      setupMobileMenu();
+    </script>
