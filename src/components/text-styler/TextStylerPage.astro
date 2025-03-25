@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextInput from './TextInput.astro';
+import StylePreview from './StylePreview.astro';
+import { translations } from '../../i18n/translations';
+import { languageService } from '../../i18n/languageService';
+import { textStyles } from '../../utils/textTransformers';
+
+const language = languageService.getCurrentLanguage();
+const t = translations[language];
+
+// Get the category from the URL hash
+const hash = Astro.url.hash?.slice(1) || '';
+const activeCategory = textStyles.find(cat => 
+  cat.name.toLowerCase().replace(/\s+/g, '-') === hash
+);
+---
+
+<Layout title={t.textStyler.title} language={language} toastMessage="text">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-4">
+      {t.textStyler.title}
+    </h1>
+    
+    <p class="text-center text-[var(--color-text-offset)] mb-8">
+      {t.textStyler.description}
+    </p>
+
+    <TextInput language={language} />
+
+    {textStyles.map(category => (
+      <section id={category.name.toLowerCase().replace(/\s+/g, '-')} class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">{category.name}</h2>
+        <StylePreview category={category} language={language} />
+      </section>
+    ))}
+  </div>
+</Layout>
+
+<script>
+  import { setupTextStyler } from '../../utils/textStyles';
+  setupTextStyler();
+</script>
