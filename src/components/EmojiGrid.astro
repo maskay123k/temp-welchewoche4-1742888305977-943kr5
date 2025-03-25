@@ -1,0 +1,60 @@
+---
+    import type { Emoji } from '../data/types';
+    import { getEmojiDescription } from '../utils/emojiUtils';
+    import { getEmojiSlug } from '../utils/emojiUtils';
+
+    interface Props {
+      emojis: Emoji[];
+      language: string;
+    }
+
+    const { emojis, language } = Astro.props;
+    ---
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      {emojis.map((emoji) => (
+        <div class="emoji-card bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-[180px]">
+          <div class="p-4 flex-1 flex flex-col items-center">
+            <span class="text-4xl mb-2">{emoji.char}</span>
+            <span class="text-sm text-gray-600 text-center line-clamp-2">
+              {getEmojiDescription(emoji.name, language)}
+            </span>
+          </div>
+          <div class="p-3 mt-auto border-t border-gray-100">
+            <div class="flex gap-2 w-full">
+              <button
+                class="emoji-item flex-1 px-3 py-1.5 text-[var(--color-accent)] bg-white border border-[var(--color-accent)] rounded hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 text-sm font-medium"
+                data-emoji={emoji.char}
+                data-type="emoji"
+                aria-label="Copy emoji"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <script>
+      import { copyToClipboard } from '../utils/clipboard';
+
+      document.querySelectorAll('.emoji-item').forEach(button => {
+        button.addEventListener('click', () => {
+          const emoji = button.getAttribute('data-emoji');
+          const type = button.getAttribute('data-type') as 'emoji' | 'text';
+          if (emoji) {
+            copyToClipboard(emoji, type);
+          }
+        });
+      });
+    </script>
+
+    <style>
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    </style>
