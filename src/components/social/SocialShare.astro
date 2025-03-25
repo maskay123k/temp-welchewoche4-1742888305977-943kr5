@@ -1,0 +1,83 @@
+---
+import ShareButton from './ShareButton.astro';
+import { getSocialShareData } from '../../utils/social/shareData';
+import type { ShareConfig } from '../../types/social';
+
+interface Props {
+  url: string;
+  title: string;
+  description?: string;
+  image?: string;
+  language: string;
+}
+
+const { url, title, description, image, language } = Astro.props;
+const shareData = getSocialShareData({ url, title, description, image });
+---
+
+<div class="social-share-container">
+  <!-- Desktop vertical layout -->
+  <div class="hidden md:flex flex-col fixed left-4 top-1/2 -translate-y-1/2 space-y-3 z-50">
+    <ShareButton 
+      platform="facebook"
+      url={shareData.facebook.url}
+      aria-label="Share on Facebook"
+    />
+    <ShareButton 
+      platform="x"
+      url={shareData.x.url}
+      aria-label="Share on X"
+    />
+    <ShareButton 
+      platform="email"
+      url={shareData.email.url}
+      aria-label="Share via Email"
+    />
+    <ShareButton 
+      platform="whatsapp"
+      url={shareData.whatsapp.url}
+      aria-label="Share on WhatsApp"
+    />
+    <ShareButton 
+      platform="telegram"
+      url={shareData.telegram.url}
+      aria-label="Share on Telegram"
+    />
+  </div>
+
+  <!-- Mobile horizontal layout -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-[var(--color-bg-base)] border-t border-[var(--color-border)] shadow-lg z-50">
+    <div class="flex justify-around items-center p-3 gap-3">
+      <ShareButton 
+        platform="facebook"
+        url={shareData.facebook.url}
+        aria-label="Share on Facebook"
+        isMobile={true}
+      />
+      <ShareButton 
+        platform="x"
+        url={shareData.x.url}
+        aria-label="Share on X"
+        isMobile={true}
+      />
+      <ShareButton 
+        platform="email"
+        url={shareData.email.url}
+        aria-label="Share via Email"
+        isMobile={true}
+      />
+      <ShareButton 
+        platform="whatsapp"
+        url={shareData.whatsapp.url}
+        aria-label="Share on WhatsApp"
+        isMobile={true}
+      />
+      <ShareButton 
+        platform="telegram"
+        url={shareData.telegram.url}
+        aria-label="Share on Telegram"
+        isMobile={true}
+      />
+    </div>
+  </div>
+</div>
