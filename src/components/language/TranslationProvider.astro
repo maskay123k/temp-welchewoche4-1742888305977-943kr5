@@ -1,0 +1,20 @@
+---
+import { useTranslation } from '../../hooks/useTranslation';
+
+interface Props {
+  fallback?: string;
+}
+
+const { fallback = 'Loading...' } = Astro.props;
+const { loading, error } = useTranslation();
+
+if (loading) {
+  return <div>{fallback}</div>;
+}
+
+if (error) {
+  return <div class="text-red-500">Error loading translations: {error.message}</div>;
+}
+---
+
+<slot />
