@@ -1,0 +1,49 @@
+---
+import { translations } from '../../i18n/translations';
+import type { LanguageCode } from '../../i18n/constants';
+import type { StyleCategory } from '../../utils/textTransformers/types';
+
+interface Props {
+  category: StyleCategory;
+  language: string;
+}
+
+const { category, language } = Astro.props;
+const t = translations[language as LanguageCode];
+---
+
+<div class="grid gap-4" id="style-previews">
+  {category.styles.map(style => (
+    <div class="style-preview bg-[var(--color-bg-offset)] p-4 rounded-lg flex items-center justify-between">
+      <div class="flex-1 break-all">
+        <p class="styled-text text-lg"></p>
+        <p class="text-sm text-[var(--color-text-offset)] mt-1">{style.name}</p>
+      </div>
+      <button
+        class="copy-button ml-4 p-2 rounded-md hover:bg-[var(--color-bg-base)] transition-colors"
+        aria-label={t.textStyler.copyButton}
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+        </svg>
+      </button>
+    </div>
+  ))}
+</div>
+
+<template id="style-preview-template">
+  <div class="style-preview bg-[var(--color-bg-offset)] p-4 rounded-lg flex items-center justify-between">
+    <div class="flex-1 break-all">
+      <p class="styled-text text-lg"></p>
+      <p class="text-sm text-[var(--color-text-offset)] mt-1 style-name"></p>
+    </div>
+    <button
+      class="copy-button ml-4 p-2 rounded-md hover:bg-[var(--color-bg-base)] transition-colors"
+      aria-label={t.textStyler.copyButton}
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+      </svg>
+    </button>
+  </div>
+</template>
