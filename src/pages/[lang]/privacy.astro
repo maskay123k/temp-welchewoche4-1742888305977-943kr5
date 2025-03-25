@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { navigationTranslations } from '../../i18n/translations/navigation';
+import { privacyTranslations } from '../../i18n/translations/pages/privacy';
+import { i18nConfig } from '../../i18n/config';
+import type { LanguageCode } from '../../i18n/constants';
+
+const { lang } = Astro.params;
+const nav = navigationTranslations[lang as LanguageCode];
+const t = privacyTranslations[lang as LanguageCode] || privacyTranslations.en;
+
+export function getStaticPaths() {
+  return i18nConfig.locales.map(lang => ({
+    params: { lang }
+  }));
+}
+---
+
+<Layout title={`${t.title}`} language={lang}>
+  <div class="max-w-4xl mx-auto px-4 py-8" data-pagefind-body data-pagefind-filter="language:${lang}">
+    <h1 class="text-3xl font-bold mb-8" data-pagefind-meta="title">{t.title}</h1>
+
+    <div class="prose prose-lg max-w-none space-y-8">
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:general">{t.general.title}</h2>
+        <p data-pagefind-meta="general">{t.general.description}</p>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:data">{t.data.title}</h2>
+        <ul class="list-disc pl-6 mb-4">
+          {t.data.items.map((item) => (
+            <li class="mb-2" data-pagefind-meta="data-item">{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:cookies">{t.cookies.title}</h2>
+        <p class="mb-4" data-pagefind-meta="cookies">{t.cookies.description}</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">{t.cookies.types.title}</h3>
+        <ul class="list-disc pl-6">
+          {t.cookies.types.items.map((item) => (
+            <li class="mb-2" data-pagefind-meta="cookie-type">
+              <strong>{item.name}:</strong> {item.description}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:analytics">{t.analytics.title}</h2>
+        <p data-pagefind-meta="analytics">{t.analytics.description}</p>
+      </section>
+
+      <section class="bg-[var(--color-bg-offset)] p-6 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4" data-pagefind-meta="section:rights">{t.rights.title}</h2>
+        <ul class="list-disc pl-6">
+          {t.rights.items.map((item) => (
+            <li class="mb-2" data-pagefind-meta="right">{item}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </div>
+</Layout>
