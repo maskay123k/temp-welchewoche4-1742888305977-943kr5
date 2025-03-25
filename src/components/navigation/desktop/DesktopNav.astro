@@ -1,0 +1,17 @@
+---
+import type { MenuItem } from '../types';
+import DesktopMenuItem from './DesktopMenuItem.astro';
+
+interface Props {
+  menuItems: MenuItem[];
+  language: string;
+}
+
+const { menuItems, language } = Astro.props;
+---
+
+<div class="hidden md:flex md:items-center md:space-x-6">
+  {menuItems.map((item) => (
+    <DesktopMenuItem item={item} language={language} />
+  ))}
+</div>
