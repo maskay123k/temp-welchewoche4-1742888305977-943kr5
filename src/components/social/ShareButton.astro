@@ -1,0 +1,51 @@
+---
+    import { getSocialIcon } from '../../utils/social/icons';
+    import { getSocialConfig } from '../../utils/social/config';
+    import type { SocialPlatform } from '../../types/social';
+
+    interface Props {
+      platform: SocialPlatform;
+      url: string;
+      isMobile?: boolean;
+      aria-label?: string;
+    }
+
+    const { platform, url, isMobile = false, aria-label } = Astro.props;
+    const icon = getSocialIcon(platform);
+    const config = getSocialConfig(platform);
+    ---
+
+    <button
+      class:list={[
+        'share-button',
+        'bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-[var(--color-text-base)] hover:text-white',
+        'transition-all duration-200 ease-in-out',
+        'hover:scale-105 active:scale-95',
+        'focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2',
+        isMobile ? 'w-12 h-12' : 'w-11 h-11',
+        'rounded-lg shadow-sm hover:shadow-md'
+      ]}
+      data-platform={platform}
+      onclick={`window.open('${url}', '_blank', 'width=600,height=400')`}
+      aria-label={aria-label || `Share on ${config.label}`}
+    >
+      <span class="sr-only">Share on {config.label}</span>
+      <Fragment set:html={icon} />
+    </button>
+
+    <style>
+      .share-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        padding: 0.75rem;
+      }
+
+      .share-button svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: currentColor;
+      }
+    </style>
