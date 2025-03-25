@@ -1,0 +1,114 @@
+---
+    import { translations } from '../../i18n/translations';
+    import type { LanguageCode } from '../../i18n/constants';
+    import { smileysFAQs } from '../../data/faqs/smileys';
+    import { textStylerFAQs } from '../../data/faqs/text-styler';
+    import { lennyFacesFAQs } from '../../data/faqs/lenny-faces';
+    import { calendarWeekFAQs } from '../../data/faqs/calendar-week';
+
+    interface Props {
+      language: string;
+      type: 'smileys' | 'text-styler' | 'lenny-faces' | 'calendar-week';
+    }
+
+    const { language, type } = Astro.props;
+    const t = translations[language as LanguageCode] || translations.en;
+
+    const getFAQs = (type: string, language: string) => {
+      switch (type) {
+        case 'smileys':
+          return smileysFAQs[language] || smileysFAQs.en;
+        case 'text-styler':
+          return textStylerFAQs[language] || textStylerFAQs.en;
+        case 'lenny-faces':
+          return lennyFacesFAQs[language] || lennyFacesFAQs.en;
+        case 'calendar-week':
+          const calendarWeekData = calendarWeekFAQs[language] || calendarWeekFAQs.en;
+          console.log('Calendar Week FAQ data:', calendarWeekData);
+          return calendarWeekData;
+        default:
+          return { general: [], technical: [] };
+      }
+    };
+
+    const faqs = getFAQs(type, language);
+    console.log('FAQ data:', faqs);
+
+    ---
+
+    <section class="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-[var(--color-border)]">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        {t.faq?.title || 'Frequently Asked Questions'}
+      </h2>
+
+      <div class="space-y-8">
+        {/* General Questions */}
+        <div>
+          <h3 class="text-xl font-semibold mb-4">
+            {t.faq?.categories?.general || 'General Questions'}
+          </h3>
+          <div class="space-y-4">
+            {faqs?.general?.length > 0 ? (
+              faqs.general.map((faq) => (
+                <details class="bg-[var(--color-bg-offset)] rounded-lg">
+                  <summary class="cursor-pointer p-4 font-medium text-left">
+                    {faq.question}
+                  </summary>
+                  <div class="p-4 pt-0 text-[var(--color-text-offset)] text-left">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))
+            ) : (
+              <p>No general FAQs available.</p>
+            )}
+          </div>
+        </div>
+
+        {/* Technical Questions */}
+        <div>
+          <h3 class="text-xl font-semibold mb-4">
+            {t.faq?.categories?.technical || 'Technical Questions'}
+          </h3>
+          <div class="space-y-4">
+            {faqs?.technical?.length > 0 ? (
+              faqs.technical.map((faq) => (
+                <details class="bg-[var(--color-bg-offset)] rounded-lg">
+                  <summary class="cursor-pointer p-4 font-medium text-left">
+                    {faq.question}
+                  </summary>
+                  <div class="p-4 pt-0 text-[var(--color-text-offset)] text-left">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))
+            ) : (
+              <p>No technical FAQs available.</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+      details > summary::after {
+        content: '+';
+        float: right;
+        font-size: 1.5em;
+        line-height: 1;
+        transition: transform 0.2s;
+      }
+      details[open] > summary::after {
+        transform: rotate(45deg);
+      }
+      details > summary,
+      details > div {
+        transition: all 0.2s;
+      }
+    </style>
