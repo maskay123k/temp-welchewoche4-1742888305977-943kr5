@@ -1,0 +1,61 @@
+---
+import { textStyles } from '../../../utils/textTransformers';
+import { translations } from '../../../i18n/translations';
+import type { LanguageCode } from '../../../i18n/constants';
+import DropdownButton from './DropdownButton.astro';
+
+interface Props {
+  language: string;
+  isMobile?: boolean;
+}
+
+const { language, isMobile = false } = Astro.props;
+const t = translations[language as LanguageCode] || translations.en;
+---
+
+<div class="relative" data-dropdown>
+  <DropdownButton label={t.textStyler.categories.title || 'Categories'}>
+    <span class="flex items-center">
+      <span>{t.textStyler.categories.title || 'Categories'}</span>
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </DropdownButton>
+
+  <div class={`dropdown-content hidden ${isMobile ? 'w-full' : 'absolute right-0 w-48'} mt-2 rounded-md shadow-lg bg-[var(--color-bg-base)] border border-[var(--color-border)]`}>
+    <div class="py-1">
+      {textStyles.map((category) => (
+        <a
+          href={`#${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+          class="block px-4 py-2 text-sm text-[var(--color-text-offset)] hover:bg-[var(--color-bg-offset)] hover:text-[var(--color-text-base)]"
+        >
+          {t.textStyler.categories[category.name] || category.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+</boltArtifact>
+
+These changes will:
+
+1. Use the translations for category names in both the menu and dropdown components
+2. Fallback to English translations if the current language translation is not found
+3. Fallback to the original category name if no translation exists
+4. Keep the existing functionality while adding multilingual support
+
+Since we can't modify the translations.ts file directly, you'll need to ensure the translations for the categories are added there. The structure should look like this:
+
+```typescript
+textStyler: {
+  categories: {
+    'Basic Styles': 'Basis-Stile',
+    'Mathematical Styles': 'Mathematische Stile', 
+    'Decorative Styles': 'Dekorative Stile',
+    'Text Effects': 'Text-Effekte'
+  }
+}
+```
+
+Would you like me to make any adjustments to this im
