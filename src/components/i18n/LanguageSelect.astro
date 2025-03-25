@@ -1,0 +1,67 @@
+---
+import { i18nConfig } from '../../i18n/config';
+import { getLanguageFromURL, useTranslations } from '../../i18n/utils';
+
+const { pathname } = Astro.url;
+const lang = getLanguageFromURL(pathname);
+const t = useTranslations(lang);
+
+const languages = Object.entries(i18nConfig.locales).map(([code, info]) => ({
+  code,
+  ...info,
+  href: `/${code}${pathname.replace(/^\/[^/]+/, '')}`
+}));
+---
+
+<div class="language-select-wrapper">
+  <label for="language-select" class="sr-only">
+    {t('i18n.selectLanguage')}
+  </label>
+  <select
+    id="language-select"
+    class="appearance-none bg-[var(--color-bg-offset)] border border-[var(--color-border)] rounded-md py-1 pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+    value={lang}
+    aria-label={t('i18n.selectLanguage')}
+  >
+    {languages.map(({ code, label }) => (
+      <option value={code} selected={code === lang}>
+        {label}
+      </option>
+    ))}
+  </select>
+</div>
+
+<script>
+  const select = document.getElementById('language-select') as HTMLSelectElement;
+  
+  if (select) {
+    select.addEventListener('change', (e) => {
+      const target = e.target as HTMLSelectElement;
+      const newLang = target.value;
+      const [_oldLang, ...urlParts] = window.location.pathname.split('/').filter(Boolean);
+      const newUrl = `/${newLang}/${urlParts.join('/')}${window.location.search}`;
+      window.location.pathname = newUrl;
+    });
+  }
+</script>
+
+<style>
+  .language-select-wrapper {
+    position: relative;
+  }
+  
+  .language-select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 2px solid currentColor;
+    border-top: 0;
+    border-left: 0;
+    transform: translateY(-65%) rotate(45deg);
+    pointer-events: none;
+  }
+</style>
