@@ -1,0 +1,24 @@
+---
+import { translations } from '../../i18n/translations';
+import type { LanguageCode } from '../../i18n/constants';
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+const t = translations[language as LanguageCode] || translations.en || {};
+
+---
+
+<div class="mb-8">
+  <label for="text-input" class="block text-sm font-medium mb-2">
+    {t.textStyler.inputLabel}
+  </label>
+  <textarea
+    id="text-input"
+    class="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-base)] focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent"
+    rows="3"
+    placeholder={t.textStyler.inputPlaceholder}
+  ></textarea>
+</div>
