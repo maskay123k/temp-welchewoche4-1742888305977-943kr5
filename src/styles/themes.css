@@ -1,0 +1,34 @@
+:root {
+  /* Light theme (default) */
+  --color-bg-base: #ffffff;
+  --color-bg-offset: #f9fafb;
+  --color-text-base: #1f2937;
+  --color-text-offset: #4b5563;
+  --color-border: #e5e7eb;
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #7c3aed;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  
+  /* Transition settings */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --color-bg-base: #111827;
+  --color-bg-offset: #1f2937;
+  --color-text-base: #f9fafb;
+  --color-text-offset: #d1d5db;
+  --color-border: #374151;
+  --color-accent: #a78bfa;
+  --color-accent-hover: #8b5cf6;
+  --color-success: #34d399;
+  --color-error: #f87171;
+}
+
+/* Apply transitions to relevant properties */
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-base);
+  transition: var(--theme-transition);
+}
